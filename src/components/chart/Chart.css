@@ -1,0 +1,16 @@
+.test {
+  min-height: 100vh;
+  background-color: rgb(69, 118, 69);
+}
+
+.chart {
+  min-height: 100vh;
+}
+
+.chart-navbar {
+  background-color: rgb(43, 105, 61);
+}
+
+canvas {
+  max-height: 400px;
+}

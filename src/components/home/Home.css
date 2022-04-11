@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+
+
+.home {
+  background-image: url("images/grassbackground.jpg");
+  min-height: 75vh;
+  font-family: Quicksand;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.headline {
+  font-family: Poppins;
+  padding-left: 145px;
+  padding-right: 145px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  font-weight: 200;
+  color: white;
+  backdrop-filter: blur(20px);
+  font-size: 65px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.headline-bottom-text{
+  font-family: Quicksand;
+  padding-top: 6px;
+  padding-left: 145px;
+  padding-right: 145px;
+  font-weight: 100;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img {
+  max-width: 250px;
+  height: 200px;
+  object-fit: fill;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.startpage-bottom {
+  min-height: 20vh;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.startpage-bottom h1 {
+  text-align: center;
+  font-size: 16px;
+}
+
+.startpage-bottom p {
+  text-align: center;
+  font-weight: 400;
+}
+
+.sidebar {
+  padding: 20px;
+ margin: 15px 45px 25px 45px;
+  background-color: #f4f4f4; 
+   min-height: 150px;
+   max-width: 450px;
+}
+
+.content1 {
+  text-align: center;
+  margin: 20px;
+  max-height: 200px;
+  max-width: 250px;
+ 
+}
+.content2 {
+  margin: 20px;
+  max-height: 200px;
+  max-width: 250px;
+}
+
+.content3 {
+  margin: 20px;
+  max-height: 200px;
+  max-width: 250px; 
+}
+.content4 {
+  display: inline-block;
+  margin: 20px;
+  max-height: 200px;
+  max-width: 250px;
+}
+
+.content5 {
+  margin: 20px;
+  max-height: 200px;
+  max-width: 200px; 
+}
+
+.content6 {
+  margin: 20px;
+  max-height: 200px;
+  max-width: 200px;  
+}
+
+
