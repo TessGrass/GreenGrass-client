@@ -41,7 +41,7 @@ const handleSubmit = (e) => {
 return (
   <div>
       <div className="chart-navbar">
-      <Navbar />
+ 
       </div>
     <div className="Chart">
     <Doughnut

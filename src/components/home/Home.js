@@ -16,7 +16,6 @@ function Home() {
   return (
     <div className="test">
     <div className="home">
-     <Navbar />
      </div>
      <div>
        <p className="headline">GREENGRASS</p>
