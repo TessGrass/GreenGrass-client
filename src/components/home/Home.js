@@ -1,8 +1,8 @@
-import Navbar from '../navbar/Navbar'
 import cutter from './images/cutter.jpg';
 import irrigation from './images/irrigation.jpeg';
 import seeds from './images/seeds.jpg';
 import lawn from './images/lawnfert.jpg';
+import { Link } from 'react-router-dom'
 
 import './Home.css';
 
@@ -14,7 +14,7 @@ function Home() {
   const period = 'MAJ - JUNI'
 
   return (
-    <div className="test">
+    <div className="home-wrapper">
     <div className="home">
      </div>
      <div>
@@ -23,10 +23,10 @@ function Home() {
      </div>
     <div className="startpage-bottom">
       <div className="sidebar"><h1>{period}</h1><p>{article}</p></div>
-      <div className="content1"> <img src={cutter} alt="cutter"></img><p>SÄSONGSPLANERING</p></div> 
+      <div className="content1"> <img src={cutter} alt="cutter"></img><Link to='/season'>SÄSONGSPLANERING</Link></div> 
       <div className="content2"><img src={irrigation} alt="irrigation"></img><p>BEVATTNING</p></div> 
       <div className="content3"><img src={lawn} alt="lawnfertilization"></img><p>GRÄSGÖDSEL</p></div> 
-      <div className="content4"><img src={seeds} alt="grass seeds"></img><p>GRÄSFRÖ</p></div> 
+      <div className="content4"><img src={seeds} alt="grass seeds"></img><p>GRÄSFRÖ</p> </div>
     </div>
     </div>
   );

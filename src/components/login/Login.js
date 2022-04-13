@@ -1,7 +1,9 @@
 import React from 'react'
-import { useState } from "react"
+import { useState, useEffect, useContext } from "react"
+import { Link } from 'react-router-dom'
 import { auth } from '../../firebase-config'
-import { setPersistence, signInWithEmailAndPassword, onAuthStateChanged, signOut,  browserSessionPersistence } from 'firebase/auth'
+import { setPersistence, signInWithEmailAndPassword, onAuthStateChanged, signOut, browserSessionPersistence } from 'firebase/auth'
+import { LoginContext } from '../../context/Context'
 import './Login.css'
 
 function Login() {
@@ -10,19 +12,33 @@ function Login() {
   const [loginPassword, setLoginPassword] = useState('')
 
   const [user, setUser] = useState({})
-  setPersistence(auth, browserSessionPersistence)
 
-  onAuthStateChanged(auth, (currentUser) => {
+  useEffect(() =>{
+    onAuthStateChanged(auth,
+       currentUser => {
+         currentUser
+           ? setUser(currentUser)
+           : setUser(null);
+       },
+    );
+ }, []);
+
+ /*  onAuthStateChanged(auth, (currentUser) => {
+    console.log(currentUser)
     setUser(currentUser)
-  })
+  }) */
 
 
   const login = async (e) => {
+    setPersistence(auth, browserSessionPersistence)
     e.preventDefault()
     console.log('----Login-----')
     try{
     const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-    console.log(user)
+   if(user.user.email) {
+    setLoggedIn(true)
+   }
+    
   } catch (error) {
     console.log(error.message)
   }
@@ -31,8 +47,13 @@ function Login() {
   const logout = async (e) => {
     e.preventDefault()
     await signOut(auth)
-
+    console.log(setUser)
+    setUser({})
+    setLoggedIn(false)
   }
+
+  const {loggedIn, setLoggedIn} = useContext(LoginContext)
+
   return (
     <div className="login-page">
       <div className="form">
@@ -47,11 +68,12 @@ function Login() {
           <input type="password" placeholder="password"onChange={(event) => {setLoginPassword(event.target.value)}}/>
           <button onClick={login}>login</button>
           <button onClick={logout}>Sign Out</button>
-          <p className="message">Not registered? <a href="#">Create an account</a></p>
+          <p className="message">Inget konto? <Link to='/register'>Registrera dig här</Link></p>
           <p>{user?.email}</p>
         </form>
       </div>
     </div>
+    
   )
 }
 
