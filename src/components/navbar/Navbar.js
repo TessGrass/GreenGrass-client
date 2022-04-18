@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="links-navbar-left">
       <Link to='/'>Start</Link>
       <Link to='/forum'>Forum</Link>
-        <Link to='/planning'>Planering</Link>
+        <Link to='/seasonal'>Planering</Link>
         {loggedIn ? <Link to='/login'>Logga ut</Link> : <Link to='/login'>Logga in</Link> }
         {loggedIn ? null : <Link to='/register' >Registrera dig</Link>}
       
@@ -22,3 +22,7 @@ const Navbar = () => {
   )
 }
 export default Navbar;
+
+
+/* {loggedIn ? <Link to='/login'>Logga ut</Link> */
+/* {loggedIn ? <Link to='/'onClick={() => login(false)} >Logga ut</Link> : <Link to='/login'>Logga in</Link> } */

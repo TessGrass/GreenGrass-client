@@ -4,6 +4,8 @@ import Signup from '../signup/Signup'
 import Home from '../home/Home'
 import Chart from '../chart/Chart'
 import Navbar from '../navbar/Navbar'
+import Season from '../season/Season'
+import Error404 from '../../error404'
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProtectedRoute from '../protectedRoute/ProtectedRoute';
@@ -21,17 +23,12 @@ function App(Auth) {
       <BrowserRouter>
       <Navbar />
       <Routes>
-      <Route path="/" element={<Home />} />
-      <Route
-          path="forum"
-          element={
-            <ProtectedRoute user={Auth}>
-              <Chart />
-            </ProtectedRoute>
-          }
-        />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Signup />} />     
+      <Route path="/" element={ <Home /> } />
+      <Route path="/seasonal" element={ <Season /> } />
+      <Route path="forum" element={ <ProtectedRoute ><Chart /></ProtectedRoute> }/>
+      <Route path="/login" element={ <Login /> } />
+      <Route path="/register" element={ <Signup /> } />
+      <Route path="*" element={ <Error404 /> }/>
       </Routes>
       </BrowserRouter>
       </LoginContext.Provider>

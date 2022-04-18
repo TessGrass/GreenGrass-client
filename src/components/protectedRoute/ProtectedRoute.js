@@ -12,7 +12,7 @@ function ProtectedRoute(props) {
   console.log(props)
 
   if (!loggedIn) {
-    return <Navigate to={{pathname: "/login", state: {from: props.location}}} />
+    return <Navigate to={{pathname: "/login", state: {from: props.location}}} /> //props location är vart vi kommer ifrån
   } else {
     return <Chart />
   }

@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect, useContext } from "react"
 import { Link } from 'react-router-dom'
 import { auth } from '../../firebase-config'
-import { setPersistence, signInWithEmailAndPassword, onAuthStateChanged, signOut, browserSessionPersistence } from 'firebase/auth'
+import { setPersistence, signInWithEmailAndPassword, onAuthStateChanged, signOut, browserSessionPersistence, getIdToken, getAuth } from 'firebase/auth'
 import { LoginContext } from '../../context/Context'
 import './Login.css'
 
@@ -20,6 +20,7 @@ function Login() {
            ? setUser(currentUser)
            : setUser(null);
        },
+       
     );
  }, []);
 
@@ -27,6 +28,11 @@ function Login() {
     console.log(currentUser)
     setUser(currentUser)
   }) */
+
+  /* const createToken = async () => {
+    const token = await firebase.auth().currentUser.getIdToken()
+    console.log(token)
+  } */
 
 
   const login = async (e) => {
@@ -36,6 +42,11 @@ function Login() {
     try{
     const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
    if(user.user.email) {
+     console.log('här')
+     const auth = getAuth();
+const user2 = auth.currentUser
+const response = await getIdToken(user2)
+console.log(response)
     setLoggedIn(true)
    }
     
@@ -59,15 +70,15 @@ function Login() {
       <div className="form">
         <div className="login">
           <div className="login-header">
-            <h3>LOGIN</h3>
-            <p>Please enter your credentials to login.</p>
+            <h3>LOGGA IN</h3>
+            <p>Ange dina inloggningsuppgifter nedan:</p>
           </div>
         </div>
         <form className="login-form">
-          <input type="text" placeholder="username" onChange={(event) => {setLoginEmail(event.target.value)}}/>
-          <input type="password" placeholder="password"onChange={(event) => {setLoginPassword(event.target.value)}}/>
-          <button onClick={login}>login</button>
-          <button onClick={logout}>Sign Out</button>
+          <input type="text" placeholder="användarmail" onChange={(event) => {setLoginEmail(event.target.value)}}/>
+          <input type="password" placeholder="lösenord"onChange={(event) => {setLoginPassword(event.target.value)}}/>
+          <button onClick={login}>Logga in</button>
+          <button onClick={logout}>Logga ut</button>
           <p className="message">Inget konto? <Link to='/register'>Registrera dig här</Link></p>
           <p>{user?.email}</p>
         </form>
