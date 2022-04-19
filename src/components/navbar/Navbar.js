@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="links-navbar-left">
       <Link to='/'>Start</Link>
-      <Link to='/forum'>Forum</Link>
+      <Link to='/inloggadklient'>Endast inloggade klienter</Link>
         <Link to='/seasonal'>Planering</Link>
         {loggedIn ? <Link to='/login'>Logga ut</Link> : <Link to='/login'>Logga in</Link> }
         {loggedIn ? null : <Link to='/register' >Registrera dig</Link>}

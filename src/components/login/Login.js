@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 import { auth } from '../../firebase-config'
 import { setPersistence, signInWithEmailAndPassword, onAuthStateChanged, signOut, browserSessionPersistence, getIdToken, getAuth } from 'firebase/auth'
 import { LoginContext } from '../../context/Context'
+import { UserUidContext } from '../../context/Context'
 import './Login.css'
 
 function Login() {
 
   const [loginEmail, setLoginEmail] = useState('')
   const [loginPassword, setLoginPassword] = useState('')
+  const {loggedIn, setLoggedIn} = useContext(LoginContext)
+  const {userUid, setUserUid} = useContext(UserUidContext)
 
   const [user, setUser] = useState({})
 
@@ -40,14 +43,14 @@ function Login() {
     e.preventDefault()
     console.log('----Login-----')
     try{
-    const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-   if(user.user.email) {
-     console.log('här')
-     const auth = getAuth();
-const user2 = auth.currentUser
-const response = await getIdToken(user2)
-console.log(response)
-    setLoggedIn(true)
+    const userData = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+   if(userData.user.email) {
+      const auth = getAuth();
+      //const userData = auth.currentUser
+      console.log(userData.user.uid)
+      setUserUid(userData.user.uid)
+      // const response = await getIdToken(userData)
+      setLoggedIn(true)
    }
     
   } catch (error) {
@@ -63,7 +66,8 @@ console.log(response)
     setLoggedIn(false)
   }
 
-  const {loggedIn, setLoggedIn} = useContext(LoginContext)
+/*   const {loggedIn, setLoggedIn} = useContext(LoginContext)
+  const {userUid, setUserUid} = useContext(UserUidContext) */
 
   return (
     <div className="login-page">
