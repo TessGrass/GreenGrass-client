@@ -14,3 +14,71 @@
 canvas {
   max-height: 400px;
 }
+
+
+.chart-wrapper {
+  width: 100vw;
+  background: yellow;
+  display: flex;
+  justify-content: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 70%;
+}
+
+
+.chart-form {
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.chart-input {
+  margin-left: 20px;
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1rem;
+  color: #000;
+  padding: 1px 3px;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.chart-label {
+  margin-left: 20px;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #363636;
+}
+
+.chart-input:focus {
+  padding-bottom: 6px;  
+  font-weight: 400;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e,#38ef7d);
+  border-image-slice: 1;
+}
+
+.button-chart {
+  display: block;
+}
+
+.chart-text {
+  max-width: 60%;
+  display: flex; 
+  justify-content: space-between;
+}
+
+
+

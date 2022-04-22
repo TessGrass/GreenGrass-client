@@ -11,31 +11,35 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import ProtectedRoute from '../protectedRoute/ProtectedRoute'
 import { LoginContext } from '../../context/Context'
 import { UserUidContext } from '../../context/Context'
+import { tokenContext } from '../../context/Context'
 
 import './App.css';
 
 function App() {
-
-  const [loggedIn, setLoggedIn] = useState(false)
-  const [userUid, setUserUid] = useState('')
-
+// console.log(sessionStorage.getItem(Object.keys(sessionStorage).filter(session => session.includes('firebase'))[0]))
+const session = JSON.parse(sessionStorage.getItem(Object.keys(sessionStorage).filter(session => session.includes('firebase'))[0]))
+  const [userUid, setUserUid] = useState(session?.uid || undefined)
+  const [token, setToken] = useState(session?.stsTokenManager?.accessToken || undefined)
+  const [loggedIn, setLoggedIn] = useState((Date.now() - session?.stsTokenManager.expirationTime) < 0)
+  // console.log(Date.now() - session.stsTokenManager.expirationTime)
 
   return (
     <LoginContext.Provider value={{loggedIn, setLoggedIn}}>
       <UserUidContext.Provider value={{userUid, setUserUid}}>
+      <tokenContext.Provider value={{token, setToken}}>
       <BrowserRouter>
       <Navbar />
       <Routes>
       <Route path="/" element={ <Home /> } />
       <Route path="/seasonal" element={ <Season /> } />
-      {/* <UserUidContext.Provider value={{userUid, setUserUid}}> */}
-      <Route path="inloggadklient" element={ <ProtectedRoute ><Chart /></ProtectedRoute> }/>
-      {/* </UserUidContext.Provider> */}
+       {/* <Route path="inloggadklient" element={<Chart />}/> */}
+    <Route path="inloggadklient" element={ <ProtectedRoute ><Chart /></ProtectedRoute> }/>
       <Route path="/login" element={ <Login /> } />
       <Route path="/register" element={ <Signup /> } />
       <Route path="*" element={ <Error404 /> }/>
       </Routes>
       </BrowserRouter>
+      </tokenContext.Provider>
       </UserUidContext.Provider>
       </LoginContext.Provider>
  )

@@ -2,6 +2,8 @@
 
 .navbar {
   font-family: "Quicksand";
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,#2da167,#14c25d);
   font-weight: 400;  
   display: flex;
   max-width: 100vw;

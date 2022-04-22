@@ -1,10 +1,9 @@
 import React from 'react'
-import axios from 'axios'
 import { Doughnut } from 'react-chartjs-2'
 import { useEffect, useState, useContext } from 'react'
 import { Chart as ChartJS } from 'chart.js/auto'
 import { UserUidContext } from '../../context/Context'
-
+import { tokenContext } from '../../context/Context'
 import './Chart.css'
 
 const Chart = () => {
@@ -13,52 +12,68 @@ const [seed, setSeed] = useState([])
 const [irrigation, setIrrigation] = useState([])
 const [fertilizer, setFertilizer] = useState([])
 const [month, setMonth] = useState('')
-const [data, setData] = useState([])
+const [bool, setBool] = useState(false || true)
 const {userUid, setUserUid} = useContext(UserUidContext)
-const url = 'http://localhost:8081/api/v1/chart'
+const {token, setToken} = useContext(tokenContext)
+const url = 'https://greengrass-backend.herokuapp.com/api/v1/chart/'
 
 
 useEffect(() => {
   console.log('-----chart component-----')
-  console.log(userUid)
-  // declare the data fetching function
   const fetchData = async () => {
-    const data = await fetch(`http://localhost:8081/api/v1/chart/${userUid}`)
+    try {
+    const data = await fetch(url + userUid)
     if (!data.ok) {
       throw Error('Could not fetch the data')
     }
+    if(data.respons === 200) {
     const json = await data.json()
     console.log(json)
     setIrrigation(json[0].irrigation)
     setFertilizer(json[0].fertilizer)
     setSeed(json[0].seeds)
-    setData(json)
+    setMonth(json[0].month)
+    } else {
+      throw new Error('No data could be fetched')
+    }
+  } catch (err) {
+    console.log(err)
   }
-  if(data.length === 0) {
-    fetchData()
-  }
-    // make sure to catch any error
-}, [])
+}
+  fetchData()
+  return
+}, [userUid, bool])
 
 
-const handleSubmit = async (e) => {
+const handleOnClick = async (e) => {
   e.preventDefault()
   const payload = {
     UserId: userUid,
+    month: month,
     seed: seed,
     irrigation: irrigation,
     fertilizer: fertilizer
   }
-  const response = await axios.post(url, payload)
-  console.log(response)
-  console.log(payload)
-}
 
+  await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(payload)
+  })
+
+   if (bool) {
+    setBool(false)
+  } else {
+    setBool(true)
+  }
+}
 
 return (
   <div>
-      <div className="chart-navbar">
- 
+      <div className="chart-navbar"> 
       </div>
     <div className="Chart">
     <Doughnut
@@ -79,41 +94,45 @@ return (
     }
     />
     </div>
-    <div className="chart-form">
-    <form onSubmit={handleSubmit}>
-    <label>Välj månad </label>
-    <select id="month" name="month" onChange={(e) => setMonth(e.target.value)}>
-    <option>Månad</option>
-    <option value="jan">Januari</option>
-    <option value="feb">Februari</option>
-    <option value="mar">Mars</option>
-    <option value="apr">April</option>
-    <option value="maj">Maj</option>
-    <option value="jun">Juni</option>
-    <option value="jul">Juli</option>
-    <option value="aug">Augusti</option>
-    <option value="sep">September</option>
-    <option value="okt">Oktober</option>
-    <option value="nov">November</option>
-    <option value="dec">December</option>
-    </select>
-    <div>
-    <label>Kostnad gräsfrö </label>
-    <input type="text" value={seed} 
+    <p>Din budget för {month} </p>
+    <div className="chart-wrapper">
+      <div className="chart-container">
+    <form className="form-wrapper" onSubmit={handleOnClick}>
+    <input type="text" placeholder="Gräsfrö" className="chart-input" required value={seed} 
           onChange={(e) => setSeed(e.target.value)}/>
-          <label>Kostnad gödsel </label>
-          <input type="text" value={fertilizer} 
+          {/*  <label className="chart-label">Kostnad gräsfrö </label> */}
+          <input type="text" placeholder="Gödsel" className="chart-input" required value={fertilizer} 
           onChange={(e) => setFertilizer(e.target.value)}/>
-          <label>Kostnad bevattning </label>
-          <input type="text" value={irrigation} 
+          {/* <label className="chart-label">Kostnad gödsel </label> */}
+          <input type="text" placeholder="Bevattning" className="chart-input"required value={irrigation} 
           onChange={(e) => setIrrigation(e.target.value)}/>
-    <button type="submit">Lägg till</button>
-    </div>
+        {/*   <label className="chart-label">Kostnad bevattning </label> */}
+          {/* <label>Välj månad </label>
+    <select id="month" name="month" required onChange={(e) => setMonth(e.target.value)}>
+    <option></option>
+    <option value="Januari">Januari</option>
+    <option value="Februari">Februari</option>
+    <option value="Mars">Mars</option>
+    <option value="April">April</option>
+    <option value="Maj">Maj</option>
+    <option value="Juni">Juni</option>
+    <option value="Juli">Juli</option>
+    <option value="Augusti">Augusti</option>
+    <option value="September">September</option>
+    <option value="Oktober">Oktober</option>
+    <option value="November">November</option>
+    <option value="December">December</option>
+    </select> */}
+    <button className="chart-button" type="submit">Lägg till</button>
     </form>
     </div>
     </div>
-
+    </div>
+  
   )
 }
 
 export default Chart
+
+
+  /* const data = await fetch(`https://greengrass-backend.herokuapp.com/api/v1/chart/${userUid}`) */
