@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+weather-container {
+  font-size: 32px;
+}
+
+.weather-wrapper {
+  font-family: Quicksand;
+  margin-left: 240px;
+  max-width: 32vw;
+  height: 40vh;
+  border-radius: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: rgb(153, 220, 153);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+}
+
+/* .search-field {
+  text-align: center;
+  color: red;
+  padding: 1rem;
+} */
+
+.temperature {
+  margin: 0;
+  text-align: center;
+  font-size: 75px;
+  font-weight: 700;
+}
+
+.topDesc {
+  margin: 0;
+  font-size: 25px;
+}
+
+/* .top {
+  width: 100%;
+  margin: rem auto;
+} */
+
+
+/*  .description {
+  position: relative;
+  right: -90%;
+  transform-origin: 0 0;
+  transform: rotate(269deg);
+} */
+
+.bottom {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 85%;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+}
+
+.desc {
+  margin: 0;
+  font-size: 18px;
+}
+
+.city {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 34px;
+}
+
+.search-field {
+  text-align: center;
+}
+.weather-wrapper input {
+  text-align: center;
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.1);
+  color: #ffffff;
+}
+
+::placeholder {
+  text-align: center;
+  color: #ffffff;
+}
+
+.weather-parent {
+  position: relative; /* has to be position relative for left to work, or you could just do margin-left: -50px; too */
+  background-color:rgb(240, 240, 240);
+  height: 100vh;
+  width: 100vw;
+}
+
+.forecast-container {
+  font-family: Quicksand;
+  margin-top: 25px;
+  margin-left: 240px;
+  max-width: 32vw;
+  height: 26vh;
+  border-radius: 20px;
+  background-color: rgb(153, 220, 153);
+  padding-left: 25px;
+  padding-right: 25px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+}
+
+.forecast-box {
+  display: inline-block;
+  justify-content: center;
+  margin-left: 14px;
+  margin-right: 12px;
+  max-width: 6vw;
+  height: 18vh;
+  border-radius: 10px;
+  background-color: rgb(106, 190, 106);
+}
+
+.forecast-box:not(:last-child) {
+  margin-right: 7px;
+}
+
+.forecastImg {
+ width: 100%;
+ height: 100%;
+}
+
+.forecast-five-days-text {
+  padding-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.forecast-weekday {
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-align: center;
+  color: white;
+  /* backdrop-filter: blur(200px); */
+}
+
+.forecast-temp {
+  font-size: 12px;
+  margin: 0;
+  text-align: center;
+  color: white;
+}

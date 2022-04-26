@@ -19,8 +19,7 @@ canvas {
 .chart-wrapper {
   width: 100vw;
   background: yellow;
-  display: flex;
-  justify-content: center;
+
 }
 
 .chart-container {
@@ -29,8 +28,6 @@ canvas {
 }
 
 .form-wrapper {
-  display: flex;
-  justify-content: center;
   max-width: 70%;
 }
 
@@ -41,7 +38,6 @@ canvas {
 }
 
 .chart-input {
-  margin-left: 20px;
   font-family: inherit;
   display: block;
   width: 100%;
@@ -49,7 +45,7 @@ canvas {
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
   font-size: 1rem;
-  color: #000;
+  color: rgb(200, 35, 35);
   padding: 1px 3px;
   background: transparent;
   transition: border-color 0.2s;
@@ -72,6 +68,10 @@ canvas {
 
 .button-chart {
   display: block;
+}
+
+.chart-month {
+  text-align: center;
 }
 
 .chart-text {
