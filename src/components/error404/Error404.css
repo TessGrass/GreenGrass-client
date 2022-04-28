@@ -1,0 +1,46 @@
+.error404-parent-container {
+  width: 100%;
+  min-height: 93vh;
+  display: flex;
+  flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+  margin: 0;
+}
+
+.error404-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 94vh;
+  background-image: url("images/sunandgrass.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.error404-text-box {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  height: 22%;
+  backdrop-filter: blur(20px);
+}
+
+.p-error404-headline {
+  font-family: Poppins;
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-size:40px;
+  font-weight: 400;
+}
+
+.p-error404-text {
+  margin-top: 8px;
+  font-size:18px;
+}
+

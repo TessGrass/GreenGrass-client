@@ -7,8 +7,9 @@ import Home from '../home/Home'
 import Chart from '../chart/Chart'
 import Navbar from '../navbar/Navbar'
 import Season from '../season/Season'
-import Error404 from '../../error404'
+import Error404 from '../error404/Error404'
 import Weather from '../weather/Weather'
+import Dashboard from '../dashboard/Dashboard'
 import ProtectedRoute from '../protectedRoute/ProtectedRoute'
 /* import { UserUidContext } from '../../context/Context'
 import { tokenContext } from '../../context/Context' */
@@ -26,8 +27,8 @@ function App() {
     .filter((session) => session.includes('firebase'))[0]))
   const [userUid, setUserUid] = useState(session?.uid || undefined)
   const [token, setToken] = useState(session?.stsTokenManager?.accessToken || undefined)
-  const [loggedIn, setLoggedIn] = useState()
-  /*  const [loggedIn, setLoggedIn] = useState((Date.now() - session?.stsTokenManager.expirationTime) < 0)  */
+  /*  const [loggedIn, setLoggedIn] = useState() */
+  const [loggedIn, setLoggedIn] = useState((Date.now() - session?.stsTokenManager.expirationTime) < 0)
 
   const loggedInValue = useMemo(() => ({
     loggedIn, setLoggedIn
@@ -57,6 +58,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Signup />} />
               <Route path="/weather" element={<Weather />} />
+              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="*" element={<Error404 />} />
             </Routes>
           </BrowserRouter>

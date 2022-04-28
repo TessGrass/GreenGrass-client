@@ -23,16 +23,15 @@ function Chart() {
   const url = 'https://greengrass-backend.herokuapp.com/api/v1/chart/'
 
   useEffect(() => {
-    console.log('-----chart component-----')
+    console.log('-----Chart Component-----')
     const fetchData = async () => {
       try {
         const data = await fetch(url + userUid)
         if (!data.ok) {
           throw Error('Could not fetch the data')
         }
-        if (data.status === 200) {
+        if (data.ok) {
           const json = await data.json()
-          console.log(json)
           setIrrigation(json[0].irrigation)
           setFertilizer(json[0].fertilizer)
           setSeed(json[0].seeds)
@@ -45,7 +44,6 @@ function Chart() {
       }
     }
     fetchData()
-    // return
   }, [userUid, bool])
 
   const handleOnClick = async (e) => {
@@ -87,18 +85,18 @@ function Chart() {
   }
 
   return (
-    <div>
-      <div className="chart-navbar" />
+    <div className="all">
       <div className="Chart">
+        {/*  <div className="Chart"> */}
         <Doughnut
           data={{
             datasets: [
               {
                 data: [irrigation, seed, fertilizer],
-                backgroundColor: ['rgba(171, 220, 224, 3)', 'rgba(199, 232, 181, 1.5)', 'rgba(235, 188, 201, 3)'],
+                backgroundColor: ['rgba(130,179,174, 1)', 'rgba(209,242,165, 0.8)', 'rgba(205,187,153, 1)'],
               },
             ],
-            labels: ['Bevattning', 'Gräsfrö', 'Gräsgödsel'],
+            /* labels: ['Bevattning', 'Gräsfrö', 'Gräsgödsel'], */
           }}
           height={400}
           width={600}
@@ -107,25 +105,32 @@ function Chart() {
             maintainAspectRatio: false
           }}
         />
+        {/*    </div> */}
+        {/* <div className="chart-color-wrapper">
+          <div className="chart-color-box-irrigation"><p className="chart-color-text-irrigation">Gödsel</p></div>
+          <div className="chart-color-box-irrigation"><p className="chart-color-text-irrigation">Gräsfrö</p></div>
+          <div className="chart-color-box-irrigation"><p className="chart-color-text-irrigation">Bevattning</p></div>
+        </div> */}
+        <p className="chart-month-text">
+          Din budget för
+          {' '}
+          { period }
+          {' '}
+          {/*  är
+            {' '}
+            {calculateSum()}
+            {' '}
+            kr */}
+        </p>
+        <p className="chart-month-calculateSum">{calculateSum()} kr</p>
       </div>
-      <p className="chart-month">
-        Din totala kostnad för
-        {' '}
-        { period }
-        {' '}
-        är
-        {' '}
-        {calculateSum()}
-        {' '}
-        kr
-      </p>
       <div className="chart-wrapper">
         <div className="chart-container">
           <form className="form-wrapper" onSubmit={handleOnClick}>
             <input
               type="text"
               placeholder="Gräsfrö"
-              className="chart-input"
+              className="chart-input-seed"
               required
               onChange={(e) => setSeed(e.target.value)}
             />
@@ -133,7 +138,7 @@ function Chart() {
             <input
               type="text"
               placeholder="Gödsel"
-              className="chart-input"
+              className="chart-input-fertilizer"
               required
               // value={fertilizer}
               onChange={(e) => setFertilizer(e.target.value)}
@@ -142,7 +147,7 @@ function Chart() {
             <input
               type="text"
               placeholder="Bevattning"
-              className="chart-input"
+              className="chart-input-irrigation"
               required
               // value={irrigation}
               onChange={(e) => setIrrigation(e.target.value)}
@@ -156,7 +161,7 @@ function Chart() {
               onChange={(e) => setPeriod(e.target.value)}
             />
             {/*   <label className="chart-label">Kostnad bevattning </label> */}
-            <button className="chart-button" type="submit">Uppdatera budget</button>
+            <button className="chart-button" type="submit">Sätt ny budget</button>
           </form>
         </div>
       </div>

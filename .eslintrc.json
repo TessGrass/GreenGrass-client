@@ -11,7 +11,7 @@
     "no-shadow": "off",
     "max-len": "off",
     "react/jsx-one-expression-per-line": "off",
-    "requireReturnForObjectLiteral": true
+    "requireReturnForObjectLiteral": 0
   },
   "globals": {
     "document": "readonly",
