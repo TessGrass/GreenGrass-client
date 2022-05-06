@@ -8,6 +8,7 @@ import './Chart.css'
 
 /**
  * Represents a Chart component.
+ *
  * @returns {*} - returns a chart component.
  */
 function Chart() {
@@ -30,8 +31,9 @@ function Chart() {
         if (!data.ok) {
           throw Error('Could not fetch the data')
         }
-        if (data.ok) {
-          const json = await data.json()
+        const json = await data.json()
+        if (json.length > 0) {
+          /*         const json = await data.json() */
           setIrrigation(json[0].irrigation)
           setFertilizer(json[0].fertilizer)
           setSeed(json[0].seeds)
@@ -54,11 +56,6 @@ function Chart() {
       seed,
       irrigation,
       fertilizer
-      /* UserId: userUid,
-      period: period,
-      seed: seed,
-      irrigation: irrigation,
-      fertilizer: fertilizer */
     }
 
     await fetch(url, {
@@ -78,16 +75,18 @@ function Chart() {
   }
 
   const calculateSum = () => {
-    const irr = parseInt(irrigation, 10)
-    const see = parseInt(seed, 10)
-    const fer = parseInt(fertilizer, 10)
-    return (irr + see + fer)
+    if (Number.isNaN(irrigation)) {
+      const irr = parseInt(irrigation, 10)
+      const see = parseInt(seed, 10)
+      const fer = parseInt(fertilizer, 10)
+      return (irr + see + fer)
+    }
+    return '0'
   }
 
   return (
     <div className="all">
       <div className="Chart">
-        {/*  <div className="Chart"> */}
         <Doughnut
           data={{
             datasets: [
@@ -105,22 +104,11 @@ function Chart() {
             maintainAspectRatio: false
           }}
         />
-        {/*    </div> */}
-        {/* <div className="chart-color-wrapper">
-          <div className="chart-color-box-irrigation"><p className="chart-color-text-irrigation">Gödsel</p></div>
-          <div className="chart-color-box-irrigation"><p className="chart-color-text-irrigation">Gräsfrö</p></div>
-          <div className="chart-color-box-irrigation"><p className="chart-color-text-irrigation">Bevattning</p></div>
-        </div> */}
         <p className="chart-month-text">
           Din budget för
           {' '}
-          { period }
+          {period || 'vecka 31' }
           {' '}
-          {/*  är
-            {' '}
-            {calculateSum()}
-            {' '}
-            kr */}
         </p>
         <p className="chart-month-calculateSum">{calculateSum()} kr</p>
       </div>
@@ -134,22 +122,18 @@ function Chart() {
               required
               onChange={(e) => setSeed(e.target.value)}
             />
-            {/*  <label className="chart-label">Kostnad gräsfrö </label> */}
             <input
               type="text"
               placeholder="Gödsel"
               className="chart-input-fertilizer"
               required
-              // value={fertilizer}
               onChange={(e) => setFertilizer(e.target.value)}
             />
-            {/* <label className="chart-label">Kostnad gödsel </label> */}
             <input
               type="text"
               placeholder="Bevattning"
               className="chart-input-irrigation"
               required
-              // value={irrigation}
               onChange={(e) => setIrrigation(e.target.value)}
             />
             <input
@@ -157,10 +141,8 @@ function Chart() {
               placeholder="Period"
               className="chart-input"
               required
-             // value={period}
               onChange={(e) => setPeriod(e.target.value)}
             />
-            {/*   <label className="chart-label">Kostnad bevattning </label> */}
             <button className="chart-button" type="submit">Sätt ny budget</button>
           </form>
         </div>
@@ -170,5 +152,3 @@ function Chart() {
 }
 
 export default Chart
-
-/* const data = await fetch(`https://greengrass-backend.herokuapp.com/api/v1/chart/${userUid}`) */

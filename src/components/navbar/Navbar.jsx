@@ -17,10 +17,8 @@ function Navbar() {
     <nav className="navbar">
       <div className="links-navbar-left">
         <Link to="/">Start</Link>
-        <Link to="/inloggadklient">Endast inloggade klienter</Link>
+        {loggedIn ? <Link to="/dashboard">Mitt Konto</Link> : null }
         <Link to="/seasonal">Planering</Link>
-        <Link to="/weather">Väder</Link>
-        <Link to="/dashboard">Dashboard</Link>
         {loggedIn ? <Link to="/login">Logga ut</Link> : <Link to="/login">Logga in</Link> }
         {loggedIn ? null : <Link to="/register">Registrera dig</Link>}
       </div>

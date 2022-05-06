@@ -33,7 +33,7 @@ function Signup() {
           <div className="signup">
             <div className="signup-header">
               <h3>REGISTRERA DIG HÄR</h3>
-              <p>Skriv in din mail och ett lösenord, minst 8 tecken.</p>
+              <p>Skriv in din mail och ett lösenord, minst 6 tecken.</p>
             </div>
           </div>
           <form className="signup-form">

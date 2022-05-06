@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
-import Chart from '../chart/Chart'
+import Dashboard from '../dashboard/Dashboard'
 import { LoginContext } from '../../context/Context'
 
 /**
@@ -20,7 +20,7 @@ function ProtectedRoute(props) {
   if (!loggedIn) {
     return <Navigate to={{ pathname: '/login', state: { from: location } }} /> // props location är vart vi kommer ifrån
   }
-  return <Chart />
+  return <Dashboard />
 }
 
 export default ProtectedRoute

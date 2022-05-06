@@ -4,11 +4,9 @@ import { LoginContext, UserUidContext, tokenContext } from '../../context/Contex
 import Login from '../login/Login'
 import Signup from '../signup/Signup'
 import Home from '../home/Home'
-import Chart from '../chart/Chart'
 import Navbar from '../navbar/Navbar'
 import Season from '../season/Season'
 import Error404 from '../error404/Error404'
-import Weather from '../weather/Weather'
 import Dashboard from '../dashboard/Dashboard'
 import ProtectedRoute from '../protectedRoute/ProtectedRoute'
 /* import { UserUidContext } from '../../context/Context'
@@ -53,12 +51,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/seasonal" element={<Season />} />
-              {/* <Route path="inloggadklient" element={<Chart />}/> */}
-              <Route path="inloggadklient" element={<ProtectedRoute><Chart /></ProtectedRoute>} />
+              <Route path="dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Signup />} />
-              <Route path="/weather" element={<Weather />} />
-              <Route path="/dashboard" element={<Dashboard />} />
               <Route path="*" element={<Error404 />} />
             </Routes>
           </BrowserRouter>

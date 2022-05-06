@@ -15,12 +15,11 @@ function Weather() {
   const country = 'SE'
   let forecastArray = []
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location},${country}&exclude=hourly,daily&appid=f09f9a63decd0dc322a3ecb1f9f1a181&units=metric`
-
   const searchLocation = async (event) => {
     console.log('-----searchLocation-----')
     if (event.key === 'Enter') {
       try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${location},${country}&exclude=hourly,daily&appid=f09f9a63decd0dc322a3ecb1f9f1a181&units=metric`
         const response = await fetch(url)
         if (!response.ok) {
           setError(true)
@@ -30,8 +29,6 @@ function Weather() {
           const fetchedData = await response.json()
           setData(fetchedData)
           console.log(fetchedData)
-          /*  const latitude = fetchedData.coord.lat
-          const longitude = fetchedData.coord.lon */
           const forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${fetchedData.coord.lat}&lon=${fetchedData.coord.lon}&exclude=current,hourly,minutely,alerts&units=metric&appid=e652f10deab03ee65306cfc45b13dca9`
           const responseForecast = await fetch(forecastUrl)
 
@@ -46,47 +43,8 @@ function Weather() {
               return arr
             })
             setForecastData(arr)
-            /* axios.get(forecastUrl).then((response) => {
-              forecastArray = [...response.data.daily]
-              const arr = []
-              forecastArray.map((currElement, index) => {
-                if (index > 0 && index < 6) {
-                  arr.push(currElement)
-                }
-                return arr
-              })
-              setForecastData(arr)
-            }) */
           }
         }
-        /*  axios.get(url).then((response) => {
-          if (!response.ok) {
-            setError(true)
-            console.log(error)
-          }
-          if (response.status === 200) {
-            setData(response.data)
-            const latitude = response.data.coord.lat
-            const longitude = response.data.coord.lon
-            console.log(latitude)
-            console.log(longitude)
-            const forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,hourly,minutely,alerts&units=metric&appid=e652f10deab03ee65306cfc45b13dca9`
-            axios.get(forecastUrl).then((response) => {
-              forecastArray = [...response.data.daily]
-              const arr = []
-              forecastArray.map((currElement, index) => {
-                if (index > 0 && index < 6) {
-                  arr.push(currElement)
-                }
-                return arr
-              })
-              setForecastData(arr)
-            })
-          } else {
-            setError(true)
-            console.log(error)
-          }
-        }) */
       } catch (err) {
         console.log(err)
       }

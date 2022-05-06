@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // eslint-disable-next-line object-curly-newline
 import { setPersistence, signInWithEmailAndPassword, onAuthStateChanged, signOut, browserSessionPersistence, getIdToken, getAuth } from 'firebase/auth'
 import { auth } from '../../firebase-config'
@@ -13,6 +13,7 @@ import './Login.css'
  */
 function Login() {
   const [loginEmail, setLoginEmail] = useState('')
+  const [authError, setAuthError] = useState(false)
   const [loginPassword, setLoginPassword] = useState('')
   // eslint-disable-next-line no-unused-vars
   const { loggedIn, setLoggedIn } = useContext(LoginContext)
@@ -22,6 +23,7 @@ function Login() {
   const { token, setToken } = useContext(tokenContext)
   // eslint-disable-next-line no-unused-vars
   const [user, setUser] = useState({})
+  const navigate = useNavigate()
 
   useEffect(() => {
     onAuthStateChanged(
@@ -34,32 +36,28 @@ function Login() {
     )
   }, [])
 
-  /*  onAuthStateChanged(auth, (currentUser) => {
-    console.log(currentUser)
-    setUser(currentUser)
-  }) */
-
-  /* const createToken = async () => {
-    const token = await firebase.auth().currentUser.getIdToken()
-    console.log(token)
-  } */
-
   const login = async (e) => {
     try {
-      console.log('----Login-----')
+      console.log('----Login-----!')
       setPersistence(auth, browserSessionPersistence)
       e.preventDefault()
       const userData = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-      console.log(userData.user)
+      console.log(userData)
+      if (!userData.user.email) {
+        throw Error('Could not fetch the data')
+      }
       if (userData.user.email) {
         const auth = getAuth()
         const fetchedToken = await getIdToken(auth.currentUser)
         setToken(fetchedToken)
         setUserUid(userData.user.uid)
         setLoggedIn(true)
+        navigate('/dashboard')
       }
     } catch (error) {
+      console.log('error')
       console.log(error.message)
+      setAuthError(true)
     }
   }
 
@@ -83,6 +81,7 @@ function Login() {
         <form className="login-form">
           <input type="text" placeholder="användarmail" onChange={(event) => { setLoginEmail(event.target.value) }} />
           <input type="password" placeholder="lösenord" onChange={(event) => { setLoginPassword(event.target.value) }} />
+          {authError ? <div className="error-auth-input">Fel email och/eller lösenord</div> : false }
           <button type="submit" onClick={login}>Logga in</button>
           <button type="submit" onClick={logout}>Logga ut</button>
           <p className="message">
