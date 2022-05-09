@@ -1,5 +1,5 @@
 import React from 'react'
-/* import { Link } from 'react-router-dom' */
+import { Link, Outlet } from 'react-router-dom'
 import './Season.css'
 
 /**
@@ -16,9 +16,10 @@ function Season() {
         </div>
       </div>
       <div className="season-nav-container">
-        <div className="season-nav-box" id="nav-box_left"><p className="item-nav-text">Bevattning</p></div>
-        <div className="season-nav-box" id="nav-box_middle"><p className="item-nav-text">Gräsfrön</p></div>
-        <div className="season-nav-box" id="nav-box_right"><p className="item-nav-text">Gräsgödsel</p></div>
+        <div className="season-nav-box" id="nav-box_left"><div className="season-nav-text-box"><p className="item-nav-text"><Link to="/seasonal/irrigation" id="season-link">Bevattning</Link></p></div></div>
+        <div className="season-nav-box" id="nav-box_middle"><p className="item-nav-text"><Link to="/seasonal/grasseed" id="season-link">Gräsfrö</Link></p></div>
+        <div className="season-nav-box" id="nav-box_right"><p className="item-nav-text"><Link to="/seasonal/grasseed" id="season-link">Gräsgödsel</Link></p></div>
+        <Outlet />
       </div>
       <div className="season-article-container">
         <div className="season-article-box">

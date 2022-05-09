@@ -6,6 +6,7 @@ import Signup from '../signup/Signup'
 import Home from '../home/Home'
 import Navbar from '../navbar/Navbar'
 import Season from '../season/Season'
+import Irrigation from '../irrigation/Irrigation'
 import Error404 from '../error404/Error404'
 import Dashboard from '../dashboard/Dashboard'
 import ProtectedRoute from '../protectedRoute/ProtectedRoute'
@@ -48,7 +49,8 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/seasonal" element={<Season />} />
+              <Route path="seasonal" element={<Season />} />
+              <Route path="seasonal/irrigation" element={<Irrigation />} />
               <Route path="dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Signup />} />

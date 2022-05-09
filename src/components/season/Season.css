@@ -37,7 +37,7 @@ background-size:cover;
   text-transform: uppercase;
   margin: 0;
   color:white;
-  font-size: 50px;
+  font-size: 45px;
   font-family: Quicksand;
   font-weight: 500;
   position: absolute;
@@ -60,10 +60,15 @@ background-size:cover;
   margin: 10px 45px 10px 25px;
 }
 
+#season-link {
+  text-decoration: none;
+  color:rgb(255, 255, 255);
+}
+
 .item-nav-text {
   margin: 0;
   color:white;
-  font-size: 16px;
+  font-size: 18px;
   font-family: Quicksand;
   font-weight: 500;
   position: absolute;
@@ -72,7 +77,17 @@ background-size:cover;
   transform: translate(-50%, -50%);    
 }
 
+.season-nav-text-box:hover {
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);   
+}
 #nav-box_left:hover {
+  box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
   position:relative;
   display:inline-block;
   height: 8vh;
@@ -87,6 +102,7 @@ background-size:cover;
 }
 
 #nav-box_middle:hover {
+  box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
   position:relative;
   display:inline-block;
   font-weight: 600;
@@ -101,6 +117,7 @@ background-size:cover;
 }
 
 #nav-box_right:hover {
+  box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
   position:relative;
   display:inline-block;
   font-weight: 600;
@@ -115,7 +132,9 @@ background-size:cover;
 }
 
 .season-article-container {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   display: inline-block;
+  border-radius: 10px;
   position: relative;
   margin-bottom: 30px;
   padding-bottom: 30px;
