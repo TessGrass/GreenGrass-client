@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;1,400&display=swap');
+
+body {
+  min-width: 80vw;
+  min-height: 100vh;
+   background: rgb(216, 216, 216);
+  text-align: center;
+}
+
+.season-cover-container {
+  margin-top: 25px;
+display: inline-block;
+position: relative;
+  border-radius: 10px;
+width: 80%;
+height: 30vh;
+/* background-color: rgb(158, 158, 158); */
+background: url("images/Grassw.jpg") no-repeat;
+background-position:center center;
+background-repeat:no-repeat;
+-moz-background-size:cover;
+-webkit-background-size:cover;
+background-size:cover;
+}
+
+.season-cover-text-box {
+  width: 60%;
+  height: 8vh;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.season-cover-text {
+  text-transform: uppercase;
+  margin: 0;
+  color:white;
+  font-size: 50px;
+  font-family: Quicksand;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.season-nav-container {
+  text-align:center;
+}
+
+.season-nav-box {
+  border-radius: 10px;
+  display:inline-block;
+  background: rgb(177, 178, 176);
+  position: relative;
+  width: 14vw;
+  height: 8vh;
+  margin: 10px 45px 10px 25px;
+}
+
+.item-nav-text {
+  margin: 0;
+  color:white;
+  font-size: 16px;
+  font-family: Quicksand;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);    
+}
+
+#nav-box_left:hover {
+  position:relative;
+  display:inline-block;
+  height: 8vh;
+  background: url("images/vattenkanna.jpg") no-repeat;
+  background-position:center center;
+  background-repeat:no-repeat;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
+/*   background-size: cover;
+  transform:scale(1.1); */
+}
+
+#nav-box_middle:hover {
+  position:relative;
+  display:inline-block;
+  font-weight: 600;
+  width: 14vw;
+  height: 8vh;
+  background: url("images/seed.jpg") no-repeat;
+  background-position:center center;
+  background-repeat:no-repeat;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
+}
+
+#nav-box_right:hover {
+  position:relative;
+  display:inline-block;
+  font-weight: 600;
+  width: 14vw;
+  height: 8vh;
+  background: url("images/fert.jpg") no-repeat;
+  background-position:center center;
+  background-repeat:no-repeat;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
+}
+
+.season-article-container {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  width: 80%;
+  height: 90vh;
+  background-color: rgb(238, 236, 236);
+}
+
+.season-article-box {
+  min-width: 80%;
+  min-height: 20%;
+}
+
+.season-article-headline {
+  margin-top: 45px;
+  padding-bottom: 12px;
+  font-size: 22px;
+}
+
+.season-article-text-first {
+  position: absolute;
+  padding-top: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 69%;
+}
+
+.season-article-text-second {
+  position: absolute;
+  padding-top: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 69%;
+}
+
+.season-article-text-third {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 69%;
+}
+
+.season-bottom-container {
+  display: flex;
+  margin-top:55px;
+  row-gap: 10px;
+  flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.season-bottom-box {
+  border-radius: 10px;
+  min-width: 16vw;
+  min-height: 17vh;
+  background: url("images/bee.jpg") no-repeat;
+  background-position:center center;
+  background-repeat:no-repeat;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
+}
+
+.season-bottom-box-text {
+  background-color: yellow;
+  padding:2px 8px 2px 8px;
+  margin-top: 10px;
+  font-weight: 500;
+  font-style:italic;
+  display: inline-block;
+  font-size: 20px;
+  font-family: Roboto Condensed;
+}
+
+.season-bottom-text {
+  background-color: yellow;
+  border-radius: 10px;
+  padding: 14px;
+  margin-left: 20px;
+  width: 15%;
+  font-size: 14px;
+  font-style:italic;
+  display: inline-block;
+}
+
+.panda-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  cursor: hand;
+}
+
+
+

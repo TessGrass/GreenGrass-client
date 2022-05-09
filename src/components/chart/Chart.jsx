@@ -59,7 +59,7 @@ function Chart() {
     }
 
     await fetch(url, {
-      method: 'PUT',
+      method: 'POST',
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${token}`
@@ -75,11 +75,12 @@ function Chart() {
   }
 
   const calculateSum = () => {
-    if (Number.isNaN(irrigation)) {
-      const irr = parseInt(irrigation, 10)
-      const see = parseInt(seed, 10)
-      const fer = parseInt(fertilizer, 10)
-      return (irr + see + fer)
+    const irr = parseInt(irrigation, 10)
+    const see = parseInt(seed, 10)
+    const fer = parseInt(fertilizer, 10)
+    const sum = irr + see + fer
+    if (!Number.isNaN(sum)) {
+      return sum
     }
     return '0'
   }

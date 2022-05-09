@@ -64,7 +64,6 @@ function Login() {
   const logout = async (e) => {
     e.preventDefault()
     await signOut(auth)
-    console.log(setUser)
     setUser({})
     setLoggedIn(false)
   }

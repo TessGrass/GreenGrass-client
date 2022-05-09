@@ -25,8 +25,8 @@ function App() {
     .filter((session) => session.includes('firebase'))[0]))
   const [userUid, setUserUid] = useState(session?.uid || undefined)
   const [token, setToken] = useState(session?.stsTokenManager?.accessToken || undefined)
-  /*  const [loggedIn, setLoggedIn] = useState() */
-  const [loggedIn, setLoggedIn] = useState((Date.now() - session?.stsTokenManager.expirationTime) < 0)
+  const [loggedIn, setLoggedIn] = useState()
+  /*  const [loggedIn, setLoggedIn] = useState((Date.now() - session?.stsTokenManager.expirationTime) < 0) */
 
   const loggedInValue = useMemo(() => ({
     loggedIn, setLoggedIn
@@ -39,8 +39,6 @@ function App() {
   const userUidValue = useMemo(() => ({
     userUid, setUserUid
   }), [userUid])
-
-  // console.log(Date.now() - session.stsTokenManager.expirationTime)
 
   return (
     <LoginContext.Provider value={loggedInValue}>

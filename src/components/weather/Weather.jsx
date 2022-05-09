@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-/* import axios from 'axios' */
 import './Weather.css'
 
 /**
@@ -19,7 +18,7 @@ function Weather() {
     console.log('-----searchLocation-----')
     if (event.key === 'Enter') {
       try {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${location},${country}&exclude=hourly,daily&appid=f09f9a63decd0dc322a3ecb1f9f1a181&units=metric`
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${location},${country}&exclude=hourly,daily&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
         const response = await fetch(url)
         if (!response.ok) {
           setError(true)
@@ -28,10 +27,8 @@ function Weather() {
           setError(false)
           const fetchedData = await response.json()
           setData(fetchedData)
-          console.log(fetchedData)
-          const forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${fetchedData.coord.lat}&lon=${fetchedData.coord.lon}&exclude=current,hourly,minutely,alerts&units=metric&appid=e652f10deab03ee65306cfc45b13dca9`
+          const forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${fetchedData.coord.lat}&lon=${fetchedData.coord.lon}&exclude=current,hourly,minutely,alerts&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY2}`
           const responseForecast = await fetch(forecastUrl)
-
           if (responseForecast.status === 200) {
             const fetchedData = await responseForecast.json()
             forecastArray = [...fetchedData.daily]
