@@ -17,8 +17,8 @@ function Season() {
       </div>
       <div className="season-nav-container">
         <div className="season-nav-box" id="nav-box_left"><div className="season-nav-text-box"><p className="item-nav-text"><Link to="/seasonal/irrigation" id="season-link">Bevattning</Link></p></div></div>
-        <div className="season-nav-box" id="nav-box_middle"><p className="item-nav-text"><Link to="/seasonal/grasseed" id="season-link">Gräsfrö</Link></p></div>
-        <div className="season-nav-box" id="nav-box_right"><p className="item-nav-text"><Link to="/seasonal/grasseed" id="season-link">Gräsgödsel</Link></p></div>
+        <div className="season-nav-box" id="nav-box_middle"><p className="item-nav-text"><Link to="/seasonal/grass-seeds" id="season-link">Gräsfrö</Link></p></div>
+        <div className="season-nav-box" id="nav-box_right"><p className="item-nav-text"><Link to="/seasonal/grass-seeds" id="season-link">Gräsgödsel</Link></p></div>
         <Outlet />
       </div>
       <div className="season-article-container">
