@@ -16,9 +16,10 @@ function Irrigation() {
         </div>
       </div>
       <div className="irrigation-nav-container">
-        <div className="irrigation-nav-box" id="irrigation-nav-box_left"><div className="irrigation-nav-text-box"><p className="irrigation-nav-text"><Link to="/seasonal" id="irrigation-link">Säsongprogram</Link></p></div></div>
-        <div className="irrigation-nav-box" id="irrigation-nav-box_middle"><p className="irrigation-nav-text"><Link to="/seasonal/grass-seeds" id="irrigation-link">Gräsfrö</Link></p></div>
-        <div className="irrigation-nav-box" id="irrigation-nav-box_right"><p className="irrigation-nav-text"><Link to="/seasonal/grass-seeds" id="irrigation-link">Gräsgödsel</Link></p></div>
+        <div className="irrigation-nav-box" id="irrigation-nav-box_first"><div className="irrigation-nav-text-box"><p className="irrigation-nav-text"><Link to="/seasonal" id="irrigation-link">Säsongsprogram</Link></p></div></div>
+        <div className="irrigation-nav-box" id="irrigation-nav-box_second"><p className="irrigation-nav-text"><Link to="/seasonal/irrigation" id="irrigation-link">Bevattning</Link></p></div>
+        <div className="irrigation-nav-box" id="irrigation-nav-box_third"><p className="irrigation-nav-text"><Link to="/seasonal/grass-seeds" id="irrigation-link">Gräsfrö</Link></p></div>
+        <div className="irrigation-nav-box" id="irrigation-nav-box_forth"><p className="irrigation-nav-text"><Link to="/seasonal/grass-fertilizer" id="irrigation-link">Gräsgödsel</Link></p></div>
         <Outlet />
       </div>
       <div className="irrigation-article-container">

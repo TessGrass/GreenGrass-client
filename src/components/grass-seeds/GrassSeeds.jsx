@@ -19,14 +19,15 @@ function GrassSeeds() {
         </div>
       </div>
       <div className="seeds-nav-container">
-        <div className="seeds-nav-box" id="seeds-nav-box_left"><div className="seeds-nav-text-box"><p className="seeds-nav-text"><Link to="/seasonal" id="seeds-link">Säsongprogram</Link></p></div></div>
-        <div className="seeds-nav-box" id="seeds-nav-box_middle"><p className="seeds-nav-text"><Link to="/seasonal/grass-seeds" id="seeds-link">Gräsfrö</Link></p></div>
-        <div className="seeds-nav-box" id="seeds-nav-box_right"><p className="seeds-nav-text"><Link to="/seasonal/grass-seeds" id="seeds-link">Gräsgödsel</Link></p></div>
+        <div className="seeds-nav-box" id="seeds-nav-box_first"><div className="seeds-nav-text-box"><p className="seeds-nav-text"><Link to="/seasonal" id="seeds-link">Säsongprogram</Link></p></div></div>
+        <div className="seeds-nav-box" id="seeds-nav-box_second"><p className="seeds-nav-text"><Link to="/seasonal/irrigation" id="season-link">Bevattning</Link></p></div>
+        <div className="seeds-nav-box" id="seeds-nav-box_third"><p className="seeds-nav-text"><Link to="/seasonal/grass-seeds" id="seeds-link">Gräsfrö</Link></p></div>
+        <div className="seeds-nav-box" id="seeds-nav-box_forth"><p className="seeds-nav-text"><Link to="/seasonal/grass-fertilizer" id="seeds-link">Gräsgödsel</Link></p></div>
         <Outlet />
       </div>
       <div className="seeds-article-container">
         <div className="seeds-article-box">
-          <h1 className="seeds-article-headline-h1">Vilken grässort ska man välja?</h1>
+          <h1 className="seeds-article-headline-h1">Vilken grässort ska jag välja?</h1>
           <p className="seeds-article-text-first">
             En grön och inbjudande gräsmatta vill vi gärna ha. Men vilka gräsfrön passar till just din trädgård och vad har du för ambitioner? Det finns nämligen hundratals olika grässorter att välja på och när du
             köper gräsfrön köper du inte bara en sort utan en blandning av flera olika. De olika sorterna är utvalda för att ge varje gräsmatta rätt egenskaper för en viss växtplats och användningsområde.
@@ -35,11 +36,11 @@ function GrassSeeds() {
         </div>
         <div className="seeds-article-box">
           <h1 className="seeds-article-headline-h1">Olika typer av grässorter</h1>
-          <h2 className="seeds-article-headline-h2">Engelsk rajgräs  - Lolium Perenne</h2>
+          <h2 className="seeds-article-headline-h2">Engelskt rajgräs  - Lolium Perenne</h2>
           <p className="seeds-article-text-second">
             Rajgräs är idag vanligt förekommande i fröblandningar till våra gräsmattor.
-            Det är faktiskt det gräs vi använder oss mest av när vi pratar om hjälpsådd/renoverings sådd. Dagens rajgräs är fleråriga med fina tunna blad som är lätta att klippa.
-            Arten har en mycket snabb etablering och en god slitstyrka.
+            Det är faktiskt det gräs vi använder oss mest av när vi pratar om hjälpsådd/renoveringssådd. Dagens rajgräs är fleråriga med fina tunna blad som är lätta att klippa.
+            Arten har en mycket snabb etablering och en god slitstyrka. Dock har Rajgräset en svag övervintringsförmåga och passar därför bättre i södra Sverige.
           </p>
           <div className="raj_grass_box">
             <img src={RajGrass} alt="Eng. Rajgräs" id="grass-image" />

@@ -27,13 +27,19 @@ function Chart() {
     console.log('-----Chart Component-----')
     const fetchData = async () => {
       try {
-        const data = await fetch(url + userUid)
+        /* const data = await fetch(url + userUid) */
+        const data = await fetch(url + userUid, {
+          method: 'GET',
+          headers: {
+            'Content-type': 'application/json',
+            Authorization: `Bearer ${token}`
+          },
+        })
         if (!data.ok) {
           throw Error('Could not fetch the data')
         }
         const json = await data.json()
         if (json.length > 0) {
-          /*         const json = await data.json() */
           setIrrigation(json[0].irrigation)
           setFertilizer(json[0].fertilizer)
           setSeed(json[0].seeds)
@@ -46,7 +52,7 @@ function Chart() {
       }
     }
     fetchData()
-  }, [userUid, bool])
+  }, [userUid, bool, token]) // varför
 
   const handleOnClick = async (e) => {
     e.preventDefault()
@@ -57,7 +63,6 @@ function Chart() {
       irrigation,
       fertilizer
     }
-
     await fetch(url, {
       method: 'POST',
       headers: {

@@ -90,7 +90,7 @@ function Weather() {
       </div>
       <section className="forecast-section">
         <div className="forecast-container">
-          <p className="forecast-five-days-text">5-dygnsprognos</p>
+          <p className="forecast-five-days-text">Prognos för kommande dygn</p>
           <div className="forecast-wrapper">
             {forecastData.map((c) => (
               <div className="forecast-box" key={c.dt}>

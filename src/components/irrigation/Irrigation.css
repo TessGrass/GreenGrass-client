@@ -15,7 +15,7 @@ position: relative;
 width: 70%;
 height: 30vh;
 /* background-color: rgb(158, 158, 158); */
-background: url("images/miad-khan-60zA0RXSX5E-unsplash.jpg");
+background: url("images/watersprinkler.jpg");
 background-position:center;
 background-repeat:no-repeat;
 -moz-background-size:cover;
@@ -55,9 +55,9 @@ background-size:cover;
   display:inline-block;
   background: rgb(174, 175, 174);
   position: relative;
-  width: 14vw;
-  height: 8vh;
-  margin: 10px 45px 10px 25px;
+  width: 10vw;
+  height: 7vh;
+  margin: 20px 45px 20px 25px;
 }
 
 #irrigation-link {
@@ -73,8 +73,7 @@ background-size:cover;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  
-    
+  transform: translate(-50%, -50%);
 }
 
 .irrigation-nav-text-box:hover {
@@ -87,11 +86,10 @@ background-size:cover;
   left: 50%;
   transform: translate(-50%, -50%);   
 }
-#irrigation-nav-box_left:hover {
+#irrigation-nav-box_first:hover {
   box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
   position:relative;
   display:inline-block;
-  height: 8vh;
   background: url("images/Grassw.jpg") no-repeat;
   background-position:center center;
   background-repeat:no-repeat;
@@ -102,13 +100,24 @@ background-size:cover;
   transform:scale(1.1); */
 }
 
-#irrigation-nav-box_middle:hover {
+#irrigation-nav-box_second:hover {
   box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
   position:relative;
   display:inline-block;
   font-weight: 600;
-  width: 14vw;
-  height: 8vh;
+  background: url("images/watersprinkler.jpg") no-repeat;
+  background-position:center center;
+  background-repeat:no-repeat;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
+}
+
+#irrigation-nav-box_third:hover {
+  box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
+  position:relative;
+  display:inline-block;
+  font-weight: 600;
   background: url("images/seed.jpg") no-repeat;
   background-position:center center;
   background-repeat:no-repeat;
@@ -117,19 +126,22 @@ background-size:cover;
   background-size:cover;
 }
 
-#irrigation-nav-box_right:hover {
+#irrigation-nav-box_forth:hover {
   box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
   position:relative;
   display:inline-block;
   font-weight: 600;
-  width: 14vw;
-  height: 8vh;
   background: url("images/fert.jpg") no-repeat;
   background-position:center center;
   background-repeat:no-repeat;
   -moz-background-size:cover;
   -webkit-background-size:cover;
   background-size:cover;
+}
+
+#irrigation-link:hover {
+  font-size: 21px;
+  font-weight:600;
 }
 
 .irrigation-article-container {

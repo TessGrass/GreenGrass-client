@@ -28,10 +28,13 @@ function Login() {
   useEffect(() => {
     onAuthStateChanged(
       auth,
-      // eslint-disable-next-line arrow-parens
-      currentUser => {
-        // eslint-disable-next-line no-unused-expressions
-        currentUser ? setUser(currentUser) : setUser(null);
+      (currentUser) => {
+        if (currentUser) {
+          setUser(currentUser)
+        } else {
+          setUser(null)
+        }
+        /* currentUser ? setUser(currentUser) : setUser(null); */
       },
     )
   }, [])
@@ -42,7 +45,6 @@ function Login() {
       setPersistence(auth, browserSessionPersistence)
       e.preventDefault()
       const userData = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-      console.log(userData)
       if (!userData.user.email) {
         throw Error('Could not fetch the data')
       }
@@ -74,7 +76,7 @@ function Login() {
         <div className="login">
           <div className="login-header">
             <h3>LOGGA IN</h3>
-            <p>Ange dina inloggningsuppgifter nedan:</p>
+            <p>Ange dina inloggningsuppgifter nedan</p>
           </div>
         </div>
         <form className="login-form">

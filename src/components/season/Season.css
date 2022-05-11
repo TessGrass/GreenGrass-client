@@ -12,7 +12,7 @@ body {
 display: inline-block;
 position: relative;
   border-radius: 10px;
-width: 80%;
+width: 70%;
 height: 30vh;
 /* background-color: rgb(158, 158, 158); */
 background: url("images/Grassw.jpg") no-repeat;
@@ -55,14 +55,19 @@ background-size:cover;
   display:inline-block;
   background: rgb(177, 178, 176);
   position: relative;
-  width: 14vw;
-  height: 8vh;
-  margin: 10px 45px 10px 25px;
+  width: 10vw;
+  height: 7vh;
+  margin: 20px 45px 20px 25px;
 }
 
 #season-link {
   text-decoration: none;
   color:rgb(255, 255, 255);
+}
+
+#season-link:hover {
+  font-size: 21px;
+  font-weight:600;
 }
 
 .item-nav-text {
@@ -86,12 +91,11 @@ background-size:cover;
   left: 50%;
   transform: translate(-50%, -50%);   
 }
-#nav-box_left:hover {
+#nav-box_first:hover {
   box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
   position:relative;
   display:inline-block;
-  height: 8vh;
-  background: url("images/vattenkanna.jpg") no-repeat;
+  background: url("images/Grassw.jpg") no-repeat;
   background-position:center center;
   background-repeat:no-repeat;
   -moz-background-size:cover;
@@ -101,13 +105,24 @@ background-size:cover;
   transform:scale(1.1); */
 }
 
-#nav-box_middle:hover {
+#nav-box_second:hover {
   box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
   position:relative;
   display:inline-block;
   font-weight: 600;
-  width: 14vw;
-  height: 8vh;
+  background: url("images/watersprinkler.jpg") no-repeat;
+  background-position:center center;
+  background-repeat:no-repeat;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
+}
+
+#nav-box_third:hover {
+  box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
+  position:relative;
+  display:inline-block;
+  font-weight: 600;
   background: url("images/seed.jpg") no-repeat;
   background-position:center center;
   background-repeat:no-repeat;
@@ -116,13 +131,11 @@ background-size:cover;
   background-size:cover;
 }
 
-#nav-box_right:hover {
+#nav-box_forth:hover {
   box-shadow: rgba(30, 45, 22, 0.5) 5px 5px 5px;
   position:relative;
   display:inline-block;
   font-weight: 600;
-  width: 14vw;
-  height: 8vh;
   background: url("images/fert.jpg") no-repeat;
   background-position:center center;
   background-repeat:no-repeat;
@@ -138,8 +151,8 @@ background-size:cover;
   position: relative;
   margin-bottom: 30px;
   padding-bottom: 30px;
-  width: 80%;
-  height: 100vh;
+  width: 70%;
+  min-height: 90vh;
   background-color: rgb(238, 236, 236);
 }
 
@@ -157,23 +170,22 @@ background-size:cover;
 .season-article-text-first {
   display: inline-block;
   width: 45vw;
-  text-align: left;
+  text-align: center;
   margin: 0;
 }
 
 .season-article-text-second {
-  position: absolute;
-  padding-top: 25px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
+  display: inline-block;
+  width: 45vw;
+  text-align: center;
+  margin: 0;
 }
 
 .season-article-text-third {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 69%;
+  display: inline-block;
+  width: 45vw;
+  text-align: center;
+  margin: 0;
 }
 
 .season-bottom-container {

@@ -16,17 +16,18 @@ function Season() {
         </div>
       </div>
       <div className="season-nav-container">
-        <div className="season-nav-box" id="nav-box_left"><div className="season-nav-text-box"><p className="item-nav-text"><Link to="/seasonal/irrigation" id="season-link">Bevattning</Link></p></div></div>
-        <div className="season-nav-box" id="nav-box_middle"><p className="item-nav-text"><Link to="/seasonal/grass-seeds" id="season-link">Gräsfrö</Link></p></div>
-        <div className="season-nav-box" id="nav-box_right"><p className="item-nav-text"><Link to="/seasonal/grass-seeds" id="season-link">Gräsgödsel</Link></p></div>
+        <div className="season-nav-box" id="nav-box_first"><p className="item-nav-text"><Link to="/seasonal" id="season-link">Säsongsprogram</Link></p></div>
+        <div className="season-nav-box" id="nav-box_second"><p className="item-nav-text"><Link to="/seasonal/irrigation" id="season-link">Bevattning</Link></p></div>
+        <div className="season-nav-box" id="nav-box_third"><p className="item-nav-text"><Link to="/seasonal/grass-seeds" id="season-link">Gräsfrö</Link></p></div>
+        <div className="season-nav-box" id="nav-box_forth"><p className="item-nav-text"><Link to="/seasonal/grass-fertilizer" id="season-link">Gräsgödsel</Link></p></div>
         <Outlet />
       </div>
       <div className="season-article-container">
         <div className="season-article-box">
-          <h1 className="season-article-headline">April - Maj </h1>
+          <h1 className="season-article-headline">April - Maj</h1>
           <p className="season-article-text-first">
             Om du har mossa i gräsmattan går det bra att använda näringstillskottet Järnsulfat FerroGent (1-2 dl. i 10 liter vatten på 50 kvm).
-            Använd alltid en spridarramp till vattenkannan. Kombigödsel som Stroller Mossa eller Florovit Masterlawn Mossa
+            Använd alltid en spridarramp till vattenkannan. Kombigödsel som Impact PROTECT 4-0-14 + 10% Fe
             är också effektivt och en klar fördel är att du ger näring till gräsmattan samtidigt.
             Att du får mossa i din gräsmatta beror till 85 % på att gräsmattan inte har fått tillräckligt med näring.
             Därför är regelbunden gödsling väldigt viktigt. Ett gott råd är att aldrig använda mossrivare eftersom du då riskerar mer mossa påföljande år.
@@ -36,9 +37,8 @@ function Season() {
         <div className="season-article-box">
           <h1 className="season-article-headline">Maj-Juni</h1>
           <p className="season-article-text-second">
-            I slutet av maj eller början av juni bör du vertikalskära, (1-2 cm djup) och stödså döda partier.
-            Dressa gräsmattan med Rölunda, Hasselfors eller Weibulls gräsmattedress.
-            Att vertikalskära gräsmattanmattan är inte nödvändigt varje år men däremot är det viktigt att dressa och stödså för att bland annat hålla ogräset borta.
+            I slutet av maj eller början av juni bör du vertikalskära, (1-2 cm djup) och stödså döda partier. Tänk på att inte vertikalskära en nyetablerad gräsmatta utan då kan du med
+            fördel vänta några år tills dess att gräsmattan har hunnit etablera sig ordentligt. Det är heller inte nödvändigt att vertikalskära gräsmattan varje år men däremot är det viktigt att dressa och stödså för att bland annat hålla ogräset borta.
             Beroende på vilket gödsel du har valt så kan det vara lämpligt med en ny giva. Vid eventuell torka måste man vattna. Se till att det blir en riktig ”rotblöta” (25-30 mm).
             Hellre mycket men sällan.
           </p>

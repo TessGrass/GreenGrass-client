@@ -30,22 +30,31 @@ function Home() {
         </div>
         <div className="content1">
           <img src={cutter} alt="cutter" />
-          <Link to="/season">
+          <Link to="/seasonal" id="home-link-headline">
             SÄSONGSPLANERING
           </Link>
+          <p className="home-link-text">Allt du behöver veta om skötsel. Allt från tidig vår fram till sen höst.</p>
         </div>
         <div className="content2">
           <img src={irrigation} alt="irrigation" />
-          <p>BEVATTNING</p>
+          <Link to="/seasonal/irrigation" id="home-link-headline">
+            BEVATTNING
+          </Link>
+          <p className="home-link-text">Lär dig att vattna rätt. Vad ska man tänka på? Hur ofta? Hur mycket?</p>
         </div>
         <div className="content3">
           <img src={lawn} alt="lawnfertilization" />
-          <p>GRÄSGÖDSEL</p>
+          <Link to="/seasonal/grass-fertilizer" id="home-link-headline">
+            GRÄSGÖDSEL
+          </Link>
+          <p className="home-link-text">Här kan du läsa mer om gräsgödsel.</p>
         </div>
         <div className="content4">
           <img src={seeds} alt="grass seeds" />
-          <p>GRÄSFRÖ</p>
-          {' '}
+          <Link to="/seasonal/grass-seeds" id="home-link-headline">
+            GRÄSFRÖ
+          </Link>
+          <p className="home-link-text">Allt du behöver veta om gräsfrön.</p>
         </div>
       </div>
     </div>
