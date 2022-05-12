@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;1,400&display=swap');
+
+body {
+  min-width: 80vw;
+  min-height: 100vh;
+   background: rgb(219, 219, 219);
+  text-align: center;
+}
+
+
+.integrity-cover-text-box {
+  width: 60%;
+  height: 8vh;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.integrity-cover-text {
+  text-transform: uppercase;
+  margin: 0;
+  color:white;
+  font-size: 45px;
+  font-family: Quicksand;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.integrity-nav-container {
+  text-align:center;
+}
+
+.integrity-nav-box {
+  border-radius: 10px;
+  display:inline-block;
+  background: rgb(174, 175, 174);
+  position: relative;
+  width: 10vw;
+  height: 7vh;
+  margin: 20px 45px 20px 25px;
+}
+
+#integrity-link {
+  text-decoration: none;
+  color:rgb(255, 255, 255);
+}
+
+.integrity-nav-text {
+  margin: 0;
+  font-size: 18px;
+  font-family: Quicksand;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.integrity-article-container {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  width: 80%;
+  min-height: 90vh;
+  background-color: rgb(230, 110, 110);
+}
+
+.integrity-article-box {
+  min-width: 80%;
+  min-height: 20%;
+}
+
+.integrity-article-headline-h1 {
+  text-transform: uppercase;
+  margin-top: 40px;
+  padding-bottom: 12px;
+  font-size: 24px;
+}
+
+.integrity-article-headline-h2 {
+  text-transform: uppercase;
+  padding-bottom: 12px;
+  font-size: 16px;
+  margin-top:20px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.integrity-article-text-first {
+  display: inline-block;
+  width: 45vw;
+  text-align: left;
+  margin: 7px 0;
+}
+
+.integrity-article-text-second {
+  display: inline-block;
+  width: 45vw;
+  text-align:left;
+  margin: 7px 0;
+}
+
+.integrity-article-text-third {
+  display: inline-block;
+  width: 45vw;
+  text-align: left;
+  margin: 0;
+}
+
+#integrity-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  margin-bottom: 55px;
+}
+
+
+

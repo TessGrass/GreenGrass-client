@@ -10,6 +10,10 @@
   margin-bottom: 26px;
 }
 
+.login-headline {
+  text-transform: uppercase;
+}
+
 .form {
   position: relative;
   z-index: 1;
@@ -56,10 +60,11 @@
   transition: all 0.3 ease;
   cursor: pointer;
 }
+
 .form .message {
-  margin: 15px 0 0;
+  margin: 5px 0 0;
   color: #1b1b1b;
-  font-size: 14px;
+  font-size: 13px;
 }
 .form .message a {
   color: #4CAF50;
@@ -92,3 +97,4 @@
     opacity: 0;
   }
 }
+

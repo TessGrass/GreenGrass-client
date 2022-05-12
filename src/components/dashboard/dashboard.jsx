@@ -1,5 +1,5 @@
 import React from 'react'
-import './Dashboard.css'
+import './dashboard.css'
 import Weather from '../weather/Weather'
 import Chart from '../chart/Chart'
 
