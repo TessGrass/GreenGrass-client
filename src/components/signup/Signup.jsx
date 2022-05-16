@@ -17,7 +17,6 @@ function Signup() {
 
   const register = async (event) => {
     event.preventDefault()
-    console.log('här')
     try {
       const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
       console.log(user)

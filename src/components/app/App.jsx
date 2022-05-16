@@ -13,6 +13,7 @@ import GrassSeeds from '../grass-seeds/GrassSeeds'
 import Fertilizer from '../fertilizer/Fertilizer'
 import Error404 from '../error404/Error404'
 import Dashboard from '../dashboard/dashboard'
+import Todo from '../todo/Todo'
 import IntegrityPolicy from '../integrityPolicy/IntegrityPolicy'
 import ProtectedRoute from '../protectedRoute/ProtectedRoute'
 
@@ -57,6 +58,7 @@ function App() {
                 <Route path="dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Signup />} />
+                <Route path="/todo" element={<Todo />} />
                 <Route path="/integrity-policy" element={<IntegrityPolicy />} />
                 <Route path="*" element={<Error404 />} />
               </Routes>

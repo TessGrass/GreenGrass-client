@@ -1,0 +1,94 @@
+.todo-container {
+  background: rgb(41,33,33);
+  max-width: 28vw;
+  margin-left : 20vw;
+  min-height: 22vh;
+  border-radius: 15px;
+  padding: 20px 10px;
+  color: white;
+  border: 3px solid rgb(36,110,194);
+}
+
+.task {
+  height: 3vh;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding-top: 2em;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.task-title-text {
+  display: inline-block;
+  margin-top: 3px;
+}
+
+.complete-task-button {
+  max-width:6vw;
+  background: rgb(12, 189, 47);
+  border-radius: 5px;
+  margin: 3px 5px;
+  padding: 3px 5px;
+  border: none;
+  cursor: pointer;
+  color:white;
+  float:right;
+}
+
+.complete-task-button:hover {
+  background-color: #098b40;
+}
+
+.remove-task-button {
+  max-width:3vw;
+  background: rgb(225, 11, 11);
+  border-radius: 5px;
+  margin: 3px 5px;
+  padding: 3px 5px;
+  border: none;
+  cursor: pointer;
+  color:white;
+  float:right;
+}
+
+.remove-task-button:hover {
+  background: rgb(148, 17, 17)
+}
+
+.add-todo-button {
+  width:23vw;
+  height: 5vh;
+  background-color: #08ac4b;
+  border-radius: 5px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  padding: 3px 5px;
+  border: none;
+  cursor: pointer;
+  color:white;
+  font-size: 12px;
+}
+
+.add-todo-button:hover { 
+  background-color: #0b7939;
+}
+
+.input-todo {
+  width:25vw;
+  height: 4vh;
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding-left: 14px;
+  font-style:normal;
+}
+
+.header {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.create-task {
+  background-color: yellow;
+}
