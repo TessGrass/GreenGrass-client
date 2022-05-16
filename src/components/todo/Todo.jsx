@@ -120,7 +120,8 @@ function Todo() {
   return (
     <div className="todo-container">
       <div className="header">Kom ihåg</div>
-      <div className="tasks">{tasks?.map((task) => (
+      <div className="tasks">{tasks.map((task) => (
+        // eslint-disable-next-line no-plusplus
         <div className="task" key={key++} style={{ textDecoration: task.completed ? 'line-through' : '' }}>
           {task.title}
           <button type="submit" className="remove-task-button" onClick={() => removeTask(task)}>X</button>
