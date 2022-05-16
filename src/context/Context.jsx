@@ -71,6 +71,7 @@ export function AuthContextProvider({ children }) {
     setLoggedIn(false)
   }
 
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
   const contextValue = {
     handleSignOut,
     handleSignIn

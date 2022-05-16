@@ -42,7 +42,7 @@ function Login() {
           <p className="message">
             Läs vår
             {' '}
-            <Link to="/integritet">Integritetspolicy</Link>
+            <Link to="/integrity-policy">Integritetspolicy</Link>
           </p>
         </form>
       </div>

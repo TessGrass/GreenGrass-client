@@ -37,14 +37,20 @@ function Signup() {
             </div>
           </div>
           <form className="signup-form">
-            <input type="email" placeholder="email" onChange={(event) => { setRegisterEmail(event.target.value) }} />
-            <input type="password" pattern=".{8,}" placeholder="lösenord" required title="Minimum åtta tecken" onChange={(event) => { setRegisterPassword(event.target.value) }} />
+            <input type="email" className="placeholder" placeholder="användarmail" onChange={(event) => { setRegisterEmail(event.target.value) }} />
+            <input type="password" className="placeholder" pattern=".{8,}" placeholder="lösenord" required title="Minimum åtta tecken" onChange={(event) => { setRegisterPassword(event.target.value) }} />
             <button type="submit" onClick={register}>Registrera dig</button>
             <p className="signup-message">
               Har du redan ett konto?
+              {' '}
               <Link to="/login">
                 Logga in här
               </Link>
+            </p>
+            <p className="signup-message">
+              Läs vår
+              {' '}
+              <Link to="/integrity-policy">Integritetspolicy</Link>
             </p>
           </form>
         </div>
