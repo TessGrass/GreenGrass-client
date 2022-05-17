@@ -1,7 +1,7 @@
 canvas {
   font-family: Quicksand;
 }
-.Chart {
+.chart {
   position: absolute;
   max-height: 35vh;
   width: 100%;
@@ -57,9 +57,15 @@ canvas {
   font-size: 0.9rem;
   border-radius: 5px;
   border: 1px solid rgba(255,255,255, 0.8);
-  background-color: rgb(106, 190, 106, 0.5);
-  color: #fff;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
+
+.form-wrapper input::placeholder {
+  font-family: Quicksand;
+  font-weight: 500;
+  color: black;
+ }
 
 .chart-input-seed:hover {
   background-color: rgba(209,242,165, 0.9);
@@ -73,7 +79,7 @@ canvas {
   background-color: rgba(205,187,153, 3);
 }
 
-.chart-button {
+/* .chart-button {
   font-size: 12px;
  padding: 0.5em 0.5em;
  margin-top: 7px;
@@ -82,6 +88,17 @@ canvas {
  color: white;
  border-radius: 10px;
  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+} */
+
+.chart-button {
+  border: none;
+  width: 10vw;
+  font-size: 12px;
+  padding: 0.5em 0.5em;
+  margin-top: 8px;
+  color: white;
+  background-color: #08ac4b;
+  border-radius: 5px;
 }
 
 button:hover {

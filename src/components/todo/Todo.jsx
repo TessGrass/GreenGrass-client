@@ -29,10 +29,10 @@ function Todo() {
       try {
         const response = await fetch('https://greengrass-backend.herokuapp.com/api/v1/todo/MsuDYdaCWeaygM6DPyncYBT08p62')
         const responseToJson = await response.json()
-        console.log(responseToJson)
         if (responseToJson.length > 0) {
-          console.log('responseToJson succeded')
           setTasks(responseToJson)
+        } else if (responseToJson.status_code === 404) {
+          console.log('404')
         }
       } catch (err) {
         console.log(err)
@@ -76,8 +76,32 @@ function Todo() {
     setValue('')
   }
 
-  const completeTask = (task) => {
-    const newTasks = [...tasks]
+  const completeTask = async (task) => {
+    console.log('här')
+    let taskStatus = true;
+    if (task.completed) {
+      taskStatus = false
+    }
+    const payload = {
+      completed: taskStatus
+    }
+    const responseFromPatch = await fetch(url + task.id, {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify(payload)
+    })
+    console.log(responseFromPatch)
+    if (responseFromPatch.status === 204) {
+      if (boolValue === true) {
+        setBoolValue(false)
+      } else {
+        setBoolValue(true)
+      }
+    }
+    /* const newTasks = [...tasks]
     newTasks.map((title) => {
       if (title === task) {
         title.completed ? title.completed = false : title.completed = true
@@ -85,12 +109,10 @@ function Todo() {
         return true
       }
       return false
-    })
+    }) */
   }
 
   const removeTask = async (task) => {
-    console.log(task)
-
     const responseFromDelete = await fetch(url + task.id, {
       method: 'DELETE',
       headers: {

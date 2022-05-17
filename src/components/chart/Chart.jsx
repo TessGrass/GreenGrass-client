@@ -92,7 +92,7 @@ function Chart() {
 
   return (
     <div className="all">
-      <div className="Chart">
+      <div className="chart">
         <Doughnut
           data={{
             datasets: [

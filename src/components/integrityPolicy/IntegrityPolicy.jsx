@@ -17,7 +17,7 @@ function IntegrityPolicy() {
           <h2 className="integrity-article-headline-h2">gdpr</h2>
           <p className="integrity-article-text-first">
             All personuppgiftsbehandling sker i enlighet med dataskyddsförordningen (GDPR). I samband med att du skapar ditt konto hos oss så godkänner du att vi lagrar och använder dina uppgifter i vår verksamhet för att fullfölja och tillhandahålla den service som du kan förvänta dig av oss.
-            Personuppgifter som anges i samband med din kommunikation med oss sparas i maximalt sex(6) månader, därefter raderas uppgifterna. Ändamålet med vår behandling av insamlade personuppgifter är följande:
+            Personuppgifter som anges i samband med din kommunikation med oss sparas i maximalt sex(6) månader, därefter raderas uppgifterna. Personuppgifter som anges i samband med att du skapar ett konto sparas så länge du väljer att använda tjänsten, därefter raderas upppgifterna. Ändamålet med vår behandling av insamlade personuppgifter är följande:
           </p>
           <p>
             För att du ska kunna skapa ditt konto på vår webbplats.
