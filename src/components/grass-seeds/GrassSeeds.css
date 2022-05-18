@@ -53,7 +53,7 @@ background-size:cover;
 .seeds-nav-box {
   border-radius: 10px;
   display:inline-block;
-  background: rgb(174, 175, 174);
+  background-color: #c5cdba;
   position: relative;
   width: 10vw;
   height: 7vh;
@@ -97,8 +97,6 @@ background-size:cover;
   -moz-background-size:cover;
   -webkit-background-size:cover;
   background-size:cover;
-/*   background-size: cover;
-  transform:scale(1.1); */
 }
 
 #seeds-nav-box_second:hover {
@@ -154,7 +152,7 @@ background-size:cover;
   padding-bottom: 30px;
   width: 70%;
   min-height: 90vh;
-  background-color: rgb(238, 236, 236);
+  background-color:#fefffd;
 }
 
 .seeds-article-box {

@@ -8,7 +8,7 @@ import './Navbar.css'
 /**
  * Represents a Navbar component.
  *
- * @returns {*} - returns the component.
+ * @returns {*} - returns a Navbar component.
  */
 function Navbar() {
   const { loggedIn } = useContext(LoginContext)

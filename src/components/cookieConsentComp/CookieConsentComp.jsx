@@ -1,5 +1,6 @@
 import React from 'react'
-import CookieConsent, { Cookies, resetCookieConsentValue } from "react-cookie-consent";
+import { Link } from 'react-router-dom'
+import CookieConsent from 'react-cookie-consent';
 
 /**
  * Represents a cookie consent component.
@@ -8,7 +9,8 @@ import CookieConsent, { Cookies, resetCookieConsentValue } from "react-cookie-co
  */
 function CookieConsentComp() {
   return (
-    <div>
+    <div className="cookie-consent-container">
+      <CookieConsent debug location="bottom" style={{ background: '#FA9F29' }}>Den här webbplatsen använder sig av Cookies. Läs mer om Cookies i vår <Link to="/integrity-policy" className="integrity-policy-link">integritetspolicy</Link></CookieConsent>
     </div>
   )
 }

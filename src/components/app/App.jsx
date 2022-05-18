@@ -3,20 +3,21 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import {
   LoginContext, UserUidContext, tokenContext, AuthContextProvider
 } from '../../context/Context'
-import Login from '../login/Login'
-import Signup from '../signup/Signup'
-import Home from '../home/Home'
-import Navbar from '../navbar/Navbar'
-import Footer from '../footer/Footer'
-import Season from '../season/Season'
-import Irrigation from '../irrigation/Irrigation'
-import GrassSeeds from '../grass-seeds/GrassSeeds'
-import Fertilizer from '../fertilizer/Fertilizer'
-import Error404 from '../error404/Error404'
+import CookeConsentComp from '../cookieConsentComp/CookieConsentComp'
 import Dashboard from '../dashboard/dashboard'
-import Todo from '../todo/Todo'
+import Error404 from '../error404/Error404'
+import Fertilizer from '../fertilizer/Fertilizer'
+import Footer from '../footer/Footer'
+import GrassSeeds from '../grass-seeds/GrassSeeds'
+import Home from '../home/Home'
 import IntegrityPolicy from '../integrityPolicy/IntegrityPolicy'
+import Irrigation from '../irrigation/Irrigation'
+import Login from '../login/Login'
+import Navbar from '../navbar/Navbar'
 import ProtectedRoute from '../protectedRoute/ProtectedRoute'
+import Season from '../season/Season'
+import Signup from '../signup/Signup'
+import Todo from '../todo/Todo'
 import './App.css';
 
 /**
@@ -62,6 +63,7 @@ function App() {
                 <Route path="/integrity-policy" element={<IntegrityPolicy />} />
                 <Route path="*" element={<Error404 />} />
               </Routes>
+              <CookeConsentComp />
               <Footer />
             </AuthContextProvider>
           </BrowserRouter>

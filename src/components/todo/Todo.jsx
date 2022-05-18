@@ -27,7 +27,14 @@ function Todo() {
     console.log('-----Todo UseEffect Component-----')
     const getTodoData = async () => {
       try {
-        const response = await fetch('https://greengrass-backend.herokuapp.com/api/v1/todo/MsuDYdaCWeaygM6DPyncYBT08p62')
+        /* const response = await fetch(url + userUid) */
+        const response = await fetch(url + userUid, {
+          method: 'GET',
+          headers: {
+            'Content-type': 'application/json',
+            Authorization: `Bearer ${token}`
+          },
+        })
         const responseToJson = await response.json()
         if (responseToJson.length > 0) {
           setTasks(responseToJson)
@@ -39,7 +46,7 @@ function Todo() {
       }
     }
     getTodoData()
-  }, [boolValue])
+  }, [boolValue, token, userUid])
 
   const addTask = async (title) => {
     console.log(title)
@@ -142,16 +149,18 @@ function Todo() {
   return (
     <div className="todo-container">
       <div className="header">Kom ihåg</div>
-      <div className="tasks">{tasks.map((task) => (
+      <div className="task-map-wrapper">
+        <div className="tasks">{tasks.map((task) => (
         // eslint-disable-next-line no-plusplus
-        <div className="task" key={key++} style={{ textDecoration: task.completed ? 'line-through' : '' }}>
-          {task.title}
-          <button type="submit" className="remove-task-button" onClick={() => removeTask(task)}>X</button>
-          <button type="submit" className="complete-task-button" onClick={() => completeTask(task)}>OK!</button>
+          <div className="task" key={key++} style={{ textDecoration: task.completed ? 'line-through' : '' }}>
+            {task.title}
+            <button type="submit" className="remove-task-button" onClick={() => removeTask(task)}>X</button>
+            <button type="submit" className="complete-task-button" onClick={() => completeTask(task)}>OK!</button>
+          </div>
+        ))}
         </div>
-      ))}
       </div>
-      <form onSubmit={handleSubmit}>
+      <form className="todo-form" onSubmit={handleSubmit}>
         <input type="text" className="input-todo" value={value} placeholder="Lägg till en uppgift" onChange={(e) => setValue(e.target.value)} />
         <button type="submit" className="add-todo-button">Lägg till</button>
       </form>

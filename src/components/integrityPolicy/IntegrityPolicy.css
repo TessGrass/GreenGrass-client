@@ -3,10 +3,9 @@
 body {
   min-width: 80vw;
   min-height: 100vh;
-   background: rgb(219, 219, 219);
+  background: rgb(219, 219, 219);
   text-align: center;
 }
-
 
 .integrity-article-container {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -25,7 +24,6 @@ body {
   min-width: 80%;
   min-height: 20%;
 }
-
 
 .integrity-article-headline-h1 {
   text-transform: uppercase;

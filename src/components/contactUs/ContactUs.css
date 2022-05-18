@@ -20,6 +20,15 @@
   margin-bottom: 50px;
 }
 
+.consent-input-wrapper {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+}
+
 .contact-us-input {
   color:rgb(0, 0, 0);
   font-family: Quicksand;

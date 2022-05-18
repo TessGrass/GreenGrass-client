@@ -3,24 +3,23 @@
 body {
   min-width: 80vw;
   min-height: 100vh;
-   background: rgb(216, 216, 216);
+  background: rgb(216, 216, 216);
   text-align: center;
 }
 
 .season-cover-container {
   margin-top: 25px;
-display: inline-block;
-position: relative;
+  display: inline-block;
+  position: relative;
   border-radius: 10px;
-width: 70%;
-height: 30vh;
-/* background-color: rgb(158, 158, 158); */
-background: url("images/Grassw.jpg") no-repeat;
-background-position:center center;
-background-repeat:no-repeat;
--moz-background-size:cover;
--webkit-background-size:cover;
-background-size:cover;
+  width: 70%;
+  height: 30vh;
+  background: url("images/Grassw.jpg") no-repeat;
+  background-position:center center;
+  background-repeat:no-repeat;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
 }
 
 .season-cover-text-box {
@@ -53,7 +52,7 @@ background-size:cover;
 .season-nav-box {
   border-radius: 10px;
   display:inline-block;
-  background: rgb(177, 178, 176);
+  background-color: #c5cdba;
   position: relative;
   width: 10vw;
   height: 7vh;
@@ -101,8 +100,6 @@ background-size:cover;
   -moz-background-size:cover;
   -webkit-background-size:cover;
   background-size:cover;
-/*   background-size: cover;
-  transform:scale(1.1); */
 }
 
 #nav-box_second:hover {
@@ -153,7 +150,7 @@ background-size:cover;
   padding-bottom: 30px;
   width: 70%;
   min-height: 90vh;
-  background-color: rgb(238, 236, 236);
+  background-color:#fefffd;
 }
 
 .season-article-box {

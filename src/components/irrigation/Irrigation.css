@@ -3,24 +3,23 @@
 body {
   min-width: 80vw;
   min-height: 100vh;
-   background: rgb(219, 219, 219);
+  background: rgb(219, 219, 219);
   text-align: center;
 }
 
 .irrigation-cover-container {
   margin-top: 25px;
-display: inline-block;
-position: relative;
+  display: inline-block;
+  position: relative;
   border-radius: 10px;
-width: 70%;
-height: 30vh;
-/* background-color: rgb(158, 158, 158); */
-background: url("images/watersprinkler.jpg");
-background-position:center;
-background-repeat:no-repeat;
--moz-background-size:cover;
--webkit-background-size:cover;
-background-size:cover;
+  width: 70%;
+  height: 30vh;
+  background: url("images/watersprinkler.jpg");
+  background-position:center;
+  background-repeat:no-repeat;
+  -moz-background-size:cover;
+  -webkit-background-size:cover;
+  background-size:cover;
 }
 
 .irrigation-cover-text-box {
@@ -53,7 +52,7 @@ background-size:cover;
 .irrigation-nav-box {
   border-radius: 10px;
   display:inline-block;
-  background: rgb(174, 175, 174);
+  background-color: #c5cdba;
   position: relative;
   width: 10vw;
   height: 7vh;
@@ -153,7 +152,7 @@ background-size:cover;
   padding-bottom: 30px;
   width: 70%;
   min-height: 90vh;
-  background-color: rgb(238, 236, 236);
+  background-color:#fefffd;
 }
 
 .irrigation-article-box {

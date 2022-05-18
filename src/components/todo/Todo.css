@@ -4,6 +4,7 @@
   background-color:#e1e9d8;
   max-width: 20vw;
   min-height: 66vh;
+  max-height: 66vh;
   border-radius: 15px;
   padding: 20px 10px;
   margin-right: 3em;
@@ -11,6 +12,24 @@
   font-weight: 500;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
+  overflow: hidden;
+}
+
+.task-map-wrapper {
+  border-radius: 10px;
+  min-height: 46.5vh;
+  max-height: 46.5vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll; 
+}
+
+.task-map-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-form {
+  margin-top: 1em;
 }
 
 .task {
@@ -94,8 +113,8 @@
   background: rgb(255, 255, 255);
   border-radius: 8px;
   padding-left: 14px;
-  margin-top: 195px;
   font-style:normal;
+  font-weight:500;
 }
 
 .header {

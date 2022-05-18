@@ -13,7 +13,7 @@ function ProtectedRoute() {
   const { loggedIn } = useContext(LoginContext)
 
   if (!loggedIn) {
-    return <Navigate to={{ pathname: '/login' }} /> // props location är vart vi kommer ifrån
+    return <Navigate to={{ pathname: '/login' }} />
   }
   return <Dashboard />
 }

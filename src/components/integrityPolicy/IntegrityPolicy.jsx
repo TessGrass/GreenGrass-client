@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiCookie } from 'react-icons/bi';
+import { Link } from 'react-router-dom'
 import './IntegrityPolicy.css'
 import ContactUs from '../contactUs/ContactUs'
 
@@ -36,11 +37,11 @@ function IntegrityPolicy() {
           <p className="integrity-article-text">
             Cookies är små bitar av text som din webbläsare skickar via den webbplats du besöker.
             En cookie-fil lagras i din webbläsare och tillåter Tjänsten eller en tredjepart att känna igen dig för att ditt nästa besök ska förenklas och göra
-            Tjänsten mer tillgänglig.
+            Tjänsten mer tillgänglig. På vår webbplats använder vi oss av Google Recaptcha som använder nödvändiga cookies för att fungera korrekt.
           </p>
         </div>
         <div className="integrity-article-box">
-          <a href="#contactform"><h2 className="integrity-article-headline-h2">Kontakta oss</h2></a>
+          <Link to="#contactform"><h2 className="integrity-article-headline-h2">Kontakta oss</h2></Link>
           <ContactUs />
         </div>
       </div>

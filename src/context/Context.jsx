@@ -16,7 +16,8 @@ export const AuthContext = createContext({
 })
 
 /**
- * Auth method.
+ * Represents a AuthContext component.
+ *
  * @returns {*} authContext.
  */
 export function AuthContextProvider({ children }) {

@@ -61,10 +61,10 @@ function ContactUs() {
           ref={captcha}
           sitekey="6LfsteUfAAAAABqhUQVxTkxlurwB_kMvs8mNo8cT"
           onChange={onChange}
-        />,
-        <label htmlFor="consent" className="consent-text">Jag samtycker till att skicka mina uppgifter
-          <input type="checkbox" id="consent" name="consent" required />
-        </label>
+        />
+        <div className="consent-input-wrapper">
+          <input type="checkbox" id="consent" name="consent" required />Jag samtycker till att skicka mina uppgifter.
+        </div>
         {messageSent ? <button type="submit" className="contact-us-message-sent">Meddelandet skickat!</button> : <button type="submit" className="contact-us-message-sent">Skicka</button>}
       </form>
     </div>
