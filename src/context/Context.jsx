@@ -77,6 +77,7 @@ export function AuthContextProvider({ children }) {
     handleSignOut,
     handleSignIn
   }
+
   return (
     <AuthContext.Provider value={contextValue}>
       {children}

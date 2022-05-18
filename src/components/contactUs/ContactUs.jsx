@@ -24,7 +24,6 @@ function ContactUs() {
 
   const onChange = async () => {
     try {
-      console.log(captcha.current.getValue())
       if (await captcha.current.getValue()) {
         setCaptchaStatus(true)
       }
@@ -63,7 +62,9 @@ function ContactUs() {
           sitekey="6LfsteUfAAAAABqhUQVxTkxlurwB_kMvs8mNo8cT"
           onChange={onChange}
         />,
-        {/*  <input type="submit" value="Skicka" /> */}
+        <label htmlFor="consent" className="consent-text">Jag samtycker till att skicka mina uppgifter
+          <input type="checkbox" id="consent" name="consent" required />
+        </label>
         {messageSent ? <button type="submit" className="contact-us-message-sent">Meddelandet skickat!</button> : <button type="submit" className="contact-us-message-sent">Skicka</button>}
       </form>
     </div>
