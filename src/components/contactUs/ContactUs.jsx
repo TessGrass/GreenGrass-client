@@ -57,7 +57,7 @@ function ContactUs() {
       <form className="contact-us-form" ref={form} onSubmit={sendEmail}>
         <input type="text" className="contact-us-input" placeholder="Namn" name="user_name" />
         <input type="email" className="contact-us-input" placeholder="Emailadress" name="user_email" />
-        <textarea className="contact-us-input" placeholder="Vad kan vi hjälpa dig" name="message" />
+        <textarea className="contact-us-input" placeholder="Vad kan vi hjälpa dig med?" name="message" />
         <ReCAPTCHA
           ref={captcha}
           sitekey="6LfsteUfAAAAABqhUQVxTkxlurwB_kMvs8mNo8cT"

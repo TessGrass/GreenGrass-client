@@ -9,8 +9,8 @@
 .contact-us-form {
   max-width: 80vw;
   max-height: 46vh;
-  margin-left: 25vw;
-  background-color: rgb(192, 233, 200);
+  margin-left: 24vw;
+  background-color:#ebebeb;
   padding: 50px;
   border-radius: 20px;
   margin-bottom: 50px;
@@ -18,19 +18,19 @@
 
 .contact-us-input {
   color:rgb(0, 0, 0);
-font-family: Helvetica, Arial, sans-serif;
+  font-family: Quicksand;
 font-weight:500;
 font-size: 14px;
 border-radius: 5px;
-line-height: 10px;
 background-color: white;
-border:2px solid #454545;
 transition: all 0.3s;
+border: none;
 padding: 13px;
 margin-bottom: 15px;
 width:100%;
 box-sizing: border-box;
 outline:0;
+text-align: left;
 }
 
 .contact-us-input::placeholder {
@@ -38,12 +38,13 @@ color: rgb(44, 44, 44);
 font-style: italic;
 padding: 10px 0px 10px 0px;
 font-size: 14px;
+text-align: left;
 }
 
 textarea {
   height: 150px;
-line-height: 150%;
 resize:vertical;
+text-align: left;
 }
 
 textarea::placeholder {
@@ -54,20 +55,18 @@ textarea::placeholder {
 }
 
 .contact-us-message-sent {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  width: 100%;
-  background:#2bb129;
-  border-radius:5px;
-  border:0;
-  cursor:pointer;
+  font-family: Quicksand;
+  width: 18vw;
+  height: 5vh;
+  background-color: #08ac4b;
+  border-radius: 5px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  padding: 3px 3px;
+  border: none;
+  cursor: pointer;
   color:white;
-  font-size:24px;
-  padding-top:10px;
-  padding-bottom:10px;
-  transition: all 0.3s;
-  margin-top:-4px;
-  margin-bottom: 15px;
-  font-weight:700;
+  font-size: 16px;
 }
 .contact-us-message-sent:hover { background:#1e821c; }
 

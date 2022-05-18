@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;1,400&display=swap');
 
 .todo-container {
-  background-color: rgb(153, 220, 153);
+  background-color:#e1e9d8;
   max-width: 20vw;
   min-height: 66vh;
   border-radius: 15px;
@@ -10,12 +10,12 @@
   color:black;
   font-weight: 500;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 10px;
 }
 
 .task {
   width: 17vw;
   height: 3vh;
-  border: 2px solid rgb(106, 190, 106);
   border-radius: 8px;
   padding-top: 2em;
   padding: 0.5em;
@@ -34,8 +34,9 @@
 }
 
 .complete-task-button {
+  font-family: Quicksand;
   max-width:6vw;
-  background: rgb(12, 189, 47);
+  background: #88b777;
   border-radius: 5px;
   margin: 3px 0px;
   padding: 3px 3px;
@@ -50,8 +51,9 @@
 }
 
 .remove-task-button {
+  font-family: Quicksand;
   max-width:3vw;
-  background: rgb(225, 11, 11);
+  background: #FF4040;
   border-radius: 5px;
   margin: 3px 5px;
   padding: 3px 5px;
@@ -66,17 +68,18 @@
 }
 
 .add-todo-button {
+  font-family: Quicksand;
   width: 18vw;
   height: 5vh;
-  background-color: #08ac4b;
+  background: #88b777;
   border-radius: 5px;
-  margin-top: 8px;
+  margin-top: 10px;
   margin-bottom: 5px;
-  padding: 3px 5px;
+  padding: 3px 3px;
   border: none;
   cursor: pointer;
   color:white;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .add-todo-button:hover { 
@@ -84,12 +87,14 @@
 }
 
 .input-todo {
+  font-family: Quicksand;
   border: none;
   width: 17vw;
   height: 4vh;
   background: rgb(255, 255, 255);
   border-radius: 8px;
   padding-left: 14px;
+  margin-top: 195px;
   font-style:normal;
 }
 
@@ -100,8 +105,4 @@
   margin-bottom: 15px;
   font-size: 2em;
   text-align: center;
-}
-
-.create-task {
-  background-color: yellow;
 }

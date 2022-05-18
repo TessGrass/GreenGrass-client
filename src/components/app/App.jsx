@@ -7,6 +7,7 @@ import Login from '../login/Login'
 import Signup from '../signup/Signup'
 import Home from '../home/Home'
 import Navbar from '../navbar/Navbar'
+import Footer from '../footer/Footer'
 import Season from '../season/Season'
 import Irrigation from '../irrigation/Irrigation'
 import GrassSeeds from '../grass-seeds/GrassSeeds'
@@ -16,7 +17,6 @@ import Dashboard from '../dashboard/dashboard'
 import Todo from '../todo/Todo'
 import IntegrityPolicy from '../integrityPolicy/IntegrityPolicy'
 import ProtectedRoute from '../protectedRoute/ProtectedRoute'
-
 import './App.css';
 
 /**
@@ -62,6 +62,7 @@ function App() {
                 <Route path="/integrity-policy" element={<IntegrityPolicy />} />
                 <Route path="*" element={<Error404 />} />
               </Routes>
+              <Footer />
             </AuthContextProvider>
           </BrowserRouter>
         </tokenContext.Provider>

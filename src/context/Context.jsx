@@ -46,6 +46,7 @@ export function AuthContextProvider({ children }) {
   const handleSignIn = async (loginEmail, loginPassword) => {
     try {
       console.log('----HandleSignIn-----')
+      console.log(user)
       setPersistence(auth, browserSessionPersistence)
       const userData = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
       if (!userData.user.email) {

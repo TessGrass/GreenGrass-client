@@ -98,7 +98,7 @@ function Chart() {
             datasets: [
               {
                 data: [irrigation, seed, fertilizer],
-                backgroundColor: ['rgba(130,179,174, 1)', 'rgba(209,242,165, 0.8)', 'rgba(205,187,153, 1)'],
+                backgroundColor: ['rgba(130,179,174, 1)', 'rgba(136, 183, 119, 0.8)', 'rgba(205,187,153, 1)'],
               },
             ],
             /* labels: ['Bevattning', 'Gräsfrö', 'Gräsgödsel'], */

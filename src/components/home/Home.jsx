@@ -5,6 +5,7 @@ import irrigation from './images/irrigation.jpeg';
 import seeds from './images/seeds.jpg';
 import lawn from './images/lawnfert.jpg';
 import './Home.css';
+
 /**
  * Represents a Home component.
  *
