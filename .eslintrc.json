@@ -11,7 +11,9 @@
     "no-shadow": "off",
     "max-len": "off",
     "react/jsx-one-expression-per-line": "off",
-    "requireReturnForObjectLiteral": 0
+    "requireReturnForObjectLiteral": 0,
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0
   },
   "globals": {
     "document": "readonly",
@@ -19,3 +21,4 @@
     "fetch": "writable"
   }
 }
+

@@ -21,30 +21,32 @@ function Login() {
   }
 
   return (
-    <div className="login-page">
-      <div className="form">
-        <div className="login">
-          <div className="login-header">
-            <h3 className="login-headline">Logga in</h3>
-            <p>Ange dina inloggningsuppgifter nedan</p>
+    <div className="login-container">
+      <div className="login-page">
+        <div className="form">
+          <div className="login">
+            <div className="login-header">
+              <h3 className="login-headline">Logga in</h3>
+              <p>Ange dina inloggningsuppgifter nedan</p>
+            </div>
           </div>
+          <form className="login-form">
+            <input type="text" placeholder="användarmail" onChange={(event) => { setLoginEmail(event.target.value) }} />
+            <input type="password" placeholder="lösenord" onChange={(event) => { setLoginPassword(event.target.value) }} />
+            { authError ? <div className="error-auth-input">Fel email och/eller lösenord</div> : false }
+            <button type="submit" onClick={login}>Logga in</button>
+            <p className="message">
+              Inget konto?
+              {' '}
+              <Link to="/register">Registrera dig här </Link>
+            </p>
+            <p className="message">
+              Läs vår
+              {' '}
+              <Link to="/integrity-policy">Integritetspolicy</Link>
+            </p>
+          </form>
         </div>
-        <form className="login-form">
-          <input type="text" placeholder="användarmail" onChange={(event) => { setLoginEmail(event.target.value) }} />
-          <input type="password" placeholder="lösenord" onChange={(event) => { setLoginPassword(event.target.value) }} />
-          { authError ? <div className="error-auth-input">Fel email och/eller lösenord</div> : false }
-          <button type="submit" onClick={login}>Logga in</button>
-          <p className="message">
-            Inget konto?
-            {' '}
-            <Link to="/register">Registrera dig här </Link>
-          </p>
-          <p className="message">
-            Läs vår
-            {' '}
-            <Link to="/integrity-policy">Integritetspolicy</Link>
-          </p>
-        </form>
       </div>
     </div>
   )

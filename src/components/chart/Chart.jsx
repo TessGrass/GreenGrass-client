@@ -27,7 +27,6 @@ function Chart() {
     console.log('-----Chart Component-----')
     const fetchData = async () => {
       try {
-        /* const data = await fetch(url + userUid) */
         const data = await fetch(url + userUid, {
           method: 'GET',
           headers: {
@@ -52,7 +51,7 @@ function Chart() {
       }
     }
     fetchData()
-  }, [userUid, bool, token]) // varför
+  }, [userUid, bool, token])
 
   const handleOnClick = async (e) => {
     e.preventDefault()
@@ -101,7 +100,6 @@ function Chart() {
                 backgroundColor: ['rgba(130,179,174, 1)', 'rgba(136, 183, 119, 0.8)', 'rgba(205,187,153, 1)'],
               },
             ],
-            /* labels: ['Bevattning', 'Gräsfrö', 'Gräsgödsel'], */
           }}
           height={400}
           width={600}

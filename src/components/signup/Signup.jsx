@@ -14,19 +14,27 @@ import './Signup.css'
 function Signup() {
   const [registerEmail, setRegisterEmail] = useState('')
   const [registerPassword, setRegisterPassword] = useState('')
+  const [registeredUser, setRegisteredUser] = useState(false)
 
   const register = async (event) => {
-    event.preventDefault()
     try {
-      const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
-      console.log(user)
+      event.preventDefault()
+      const responseFirebase = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+      if (responseFirebase.user.accessToken) {
+        setRegisteredUser(true)
+        event.target.reset()
+        const timer = setTimeout(() => {
+          clearTimeout(timer)
+          setRegisteredUser(false)
+        }, 3000)
+      }
     } catch (error) {
       console.log(error.message)
     }
   }
 
   return (
-    <div>
+    <div className="signup-container">
       <div className="signup-page">
         <div className="form-signup">
           <div className="signup">
@@ -35,10 +43,14 @@ function Signup() {
               <p>Skriv in din mail och ett lösenord, minst 6 tecken.</p>
             </div>
           </div>
-          <form className="signup-form">
+          <form className="signup-form" onSubmit={register}>
             <input type="email" className="placeholder" placeholder="användarmail" onChange={(event) => { setRegisterEmail(event.target.value) }} />
-            <input type="password" className="placeholder" pattern=".{8,}" placeholder="lösenord" required title="Minimum åtta tecken" onChange={(event) => { setRegisterPassword(event.target.value) }} />
-            <button type="submit" onClick={register}>Registrera dig</button>
+            <input type="password" className="placeholder" pattern=".{6,}" placeholder="lösenord" required title="Minimum sex tecken" onChange={(event) => { setRegisterPassword(event.target.value) }} />
+            <label htmlFor="consent" className="consent-text">Jag samtycker till att skicka mina uppgifter
+              <input type="checkbox" id="consent" name="consent" required />
+            </label>
+            { registeredUser ? <div className="success-register-user">Ditt konto har skapats och du kan nu logga in!</div> : false }
+            <button type="submit">Registrera dig</button>
             <p className="signup-message">
               Har du redan ett konto?
               {' '}
