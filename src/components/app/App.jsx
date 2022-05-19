@@ -21,7 +21,7 @@ import Todo from '../todo/Todo'
 import './App.css';
 
 /**
- * Represents an App component.
+ * Represents an App component. // REmove this later.
  *
  * @returns {*} - returns the component.
  */
