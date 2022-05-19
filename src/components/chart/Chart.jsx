@@ -17,10 +17,9 @@ function Chart() {
   const [fertilizer, setFertilizer] = useState([])
   const [period, setPeriod] = useState('')
   const [bool, setBool] = useState(false || true)
-  // eslint-disable-next-line no-unused-vars
-  const { userUid, setUserUid } = useContext(UserUidContext)
-  // eslint-disable-next-line no-unused-vars
-  const { token, setToken } = useContext(tokenContext)
+  const [isLoading, setIsLoading] = useState(false)
+  const { userUid } = useContext(UserUidContext)
+  const { token } = useContext(tokenContext)
   const url = 'https://greengrass-backend.herokuapp.com/api/v1/chart/'
 
   useEffect(() => {
@@ -43,6 +42,7 @@ function Chart() {
           setFertilizer(json[0].fertilizer)
           setSeed(json[0].seeds)
           setPeriod(json[0].period)
+          setIsLoading(true)
         } else {
           throw new Error('No data could be fetched')
         }
@@ -50,7 +50,7 @@ function Chart() {
         console.log(err)
       }
     }
-    fetchData()
+    return fetchData()
   }, [userUid, bool, token])
 
   const handleOnClick = async (e) => {
@@ -108,12 +108,13 @@ function Chart() {
             maintainAspectRatio: false
           }}
         />
-        <p className="chart-month-text">
-          Din budget för
-          {' '}
-          {period || 'vecka 31' }
-          {' '}
-        </p>
+        { isLoading ? (
+          <p className="chart-month-text"> Din budget för
+            {' '}
+            {period || 'vecka 31' }
+            {' '}
+          </p>
+        ) : <p className="chart-month-text">Ingen budget finns i databasen</p> }
         <p className="chart-month-calculateSum">{calculateSum()} kr</p>
       </div>
       <div className="chart-wrapper">

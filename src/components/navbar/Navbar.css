@@ -43,6 +43,7 @@
   background:none;
   padding-left: 25px;
   margin-right: 40px;
+  font-weight: 600;
 }
 .button-signout:hover {
  cursor: pointer;

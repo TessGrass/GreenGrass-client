@@ -1,12 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
 
-
 .home {
   background-image: url("images/grassbackground.jpg");
   min-height: 75vh;
   font-family: Quicksand;
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -71,7 +69,9 @@ img {
 .sidebar {
   border-radius: 10px;
   padding: 20px;
- margin: 15px 45px 25px 45px;
+  margin-top: 1.2em;
+  margin-right: 6em;
+  margin-left: 0;
   background-color: #f4f4f4; 
    min-height: 150px;
    max-width: 450px;

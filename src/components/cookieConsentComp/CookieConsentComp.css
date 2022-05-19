@@ -1,4 +1,6 @@
-a {
-  text-decoration: none;
-  color: orange;
-}
+ a {
+  text-decoration:underline;
+  color: rgb(187, 90, 11);
+  cursor: pointer;
+  font-weight: 600;
+ }

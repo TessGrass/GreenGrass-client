@@ -26,6 +26,8 @@
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: flex-start;
+  padding-top: 8px;
+  font-size: 13px;
 
 }
 
@@ -73,11 +75,10 @@ textarea::placeholder {
 .contact-us-message-sent {
   font-family: Quicksand;
   width: 16vw;
-  height: 5vh;
+  height: 8vh;
   background-color: #08ac4b;
   border-radius: 5px;
   margin-top: 8px;
-  margin-bottom: 5px;
   padding: 3px 3px;
   border: none;
   cursor: pointer;

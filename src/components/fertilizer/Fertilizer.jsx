@@ -45,25 +45,27 @@ function Fertilizer() {
             <img src="https://i.postimg.cc/Zn09T8w3/GG-PROTECT-20kg-540x.webp" alt="Vårgödsel" id="fertilizer-image" />
           </div>
           <table>
-            <tr>
-              <th>Analys:</th>
-            </tr>
-            <tr>
-              <td>Totalt Kväve(N)</td>
-              <td>11.6%</td>
-            </tr>
-            <tr>
-              <td>- Svavel(s)</td>
-              <td>4.9%</td>
-            </tr>
-            <tr>
-              <td>- Järn(Fe)</td>
-              <td>10%</td>
-            </tr>
-            <tr>
-              <td>- Kalium</td>
-              <td>11.6%</td>
-            </tr>
+            <tbody>
+              <tr>
+                <th>Analys:</th>
+              </tr>
+              <tr>
+                <td>Totalt Kväve(N)</td>
+                <td>11.6%</td>
+              </tr>
+              <tr>
+                <td>- Svavel(s)</td>
+                <td>4.9%</td>
+              </tr>
+              <tr>
+                <td>- Järn(Fe)</td>
+                <td>10%</td>
+              </tr>
+              <tr>
+                <td>- Kalium</td>
+                <td>11.6%</td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div className="fertilizer-article-box">
@@ -79,25 +81,27 @@ function Fertilizer() {
             <img src="https://i.ibb.co/1QnD49T/GG-CGFPRO9-540x.webp" alt="Pro" id="fertilizer-image" />
           </div>
           <table>
-            <tr>
-              <th>Analys:</th>
-            </tr>
-            <tr>
-              <td>Totalt Kväve(N)</td>
-              <td>25%</td>
-            </tr>
-            <tr>
-              <td>- Fosfor(P)</td>
-              <td>2.2%</td>
-            </tr>
-            <tr>
-              <td>- Kalium</td>
-              <td>8.3%</td>
-            </tr>
-            <tr>
-              <td>- Magnesium (Mg)</td>
-              <td>1.2%</td>
-            </tr>
+            <tbody>
+              <tr>
+                <th>Analys:</th>
+              </tr>
+              <tr>
+                <td>Totalt Kväve(N)</td>
+                <td>25%</td>
+              </tr>
+              <tr>
+                <td>- Fosfor(P)</td>
+                <td>2.2%</td>
+              </tr>
+              <tr>
+                <td>- Kalium</td>
+                <td>8.3%</td>
+              </tr>
+              <tr>
+                <td>- Magnesium (Mg)</td>
+                <td>1.2%</td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div className="fertilizer-article-box">
@@ -112,29 +116,31 @@ function Fertilizer() {
             <img src="https://i.postimg.cc/SQ5LnRcq/GG-SHIELD-20kg-df66d25f-dc4e-476c-9a70-04db6d524bdb-540x.webp" alt="Rödsvingel" id="fertilizer-image" />
           </div>
           <table>
-            <tr>
-              <th>Analys:</th>
-            </tr>
-            <tr>
-              <td>Totalt Kväve(N)</td>
-              <td>5%</td>
-            </tr>
-            <tr>
-              <td>- Fosfor(P)</td>
-              <td>2.2%</td>
-            </tr>
-            <tr>
-              <td>Kalium</td>
-              <td>12.5%</td>
-            </tr>
-            <tr>
-              <td>- Magnesium(Mg)</td>
-              <td>1.2%</td>
-            </tr>
-            <tr>
-              <td>- Järn(Fe)</td>
-              <td>4.0%</td>
-            </tr>
+            <tbody>
+              <tr>
+                <th>Analys:</th>
+              </tr>
+              <tr>
+                <td>Totalt Kväve(N)</td>
+                <td>5%</td>
+              </tr>
+              <tr>
+                <td>- Fosfor(P)</td>
+                <td>2.2%</td>
+              </tr>
+              <tr>
+                <td>Kalium</td>
+                <td>12.5%</td>
+              </tr>
+              <tr>
+                <td>- Magnesium(Mg)</td>
+                <td>1.2%</td>
+              </tr>
+              <tr>
+                <td>- Järn(Fe)</td>
+                <td>4.0%</td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div className="fertilizer-bottom-container">
