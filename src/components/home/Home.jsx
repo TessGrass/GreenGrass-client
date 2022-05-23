@@ -1,9 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import cutter from './images/cutter.jpg';
-import irrigation from './images/irrigation.jpeg';
-import seeds from './images/seeds.jpg';
-import lawn from './images/lawnfert.jpg';
 import './Home.css';
 
 /**
@@ -30,28 +26,28 @@ function Home() {
           <p>{article}</p>
         </div>
         <div className="content1">
-          <img src={cutter} alt="cutter" />
+          <img src="https://i.imgur.com/vzhig7H.jpg" alt="cutter" />
           <Link to="/seasonal" id="home-link-headline">
             SÄSONGSPLANERING
           </Link>
           <p className="home-link-text">Allt du behöver veta om skötsel. Allt från tidig vår fram till sen höst.</p>
         </div>
         <div className="content2">
-          <img src={irrigation} alt="irrigation" />
+          <img src="https://i.imgur.com/Hs7fvb7.jpg" alt="irrigation" />
           <Link to="/seasonal/irrigation" id="home-link-headline">
             BEVATTNING
           </Link>
           <p className="home-link-text">Lär dig att vattna rätt. Vad ska man tänka på? Hur ofta? Hur mycket?</p>
         </div>
         <div className="content3">
-          <img src={lawn} alt="lawnfertilization" />
+          <img src="https://i.imgur.com/omOJrrJ.jpg" alt="lawnfertilization" />
           <Link to="/seasonal/grass-fertilizer" id="home-link-headline">
             GRÄSGÖDSEL
           </Link>
           <p className="home-link-text">Här kan du läsa mer om gräsgödsel.</p>
         </div>
         <div className="content4">
-          <img src={seeds} alt="grass seeds" />
+          <img src="https://i.imgur.com/nnjDx4j.jpg" alt="grass seeds" />
           <Link to="/seasonal/grass-seeds" id="home-link-headline">
             GRÄSFRÖ
           </Link>

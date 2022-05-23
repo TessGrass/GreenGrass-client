@@ -59,7 +59,7 @@ function ContactUs() {
         <textarea className="contact-us-input" placeholder="Vad kan vi hjälpa dig med?" name="message" />
         <ReCAPTCHA
           ref={captcha}
-          sitekey="6LfsteUfAAAAABqhUQVxTkxlurwB_kMvs8mNo8cT"
+          sitekey="6LfV7AsgAAAAAPch9JbEElqMtwij9IfQiAG1_Egd"
           onChange={onChange}
         />
         <div className="consent-input-wrapper">
