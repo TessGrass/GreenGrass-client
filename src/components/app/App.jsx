@@ -28,9 +28,13 @@ import './App.css';
 function App() {
   const session = JSON.parse(sessionStorage.getItem(Object.keys(sessionStorage)
     .filter((session) => session.includes('firebase'))[0]))
-  const [userUid, setUserUid] = useState(session?.uid || undefined)
-  const [token, setToken] = useState(session?.stsTokenManager?.accessToken || undefined)
-  const [loggedIn, setLoggedIn] = useState(session?.stsTokenManager?.accessToken || false)
+  const sessionUid = session ? session.uid : undefined
+  const sessionToken = session ? session.stsTokenManager.accessToken : undefined
+  const sessionLoggedIn = session ? session.stsTokenManager.accessToken : false
+  const [userUid, setUserUid] = useState(sessionUid || undefined)
+  const [token, setToken] = useState(sessionToken || undefined)
+  const [loggedIn, setLoggedIn] = useState(sessionLoggedIn || false)
+
   const loggedInValue = useMemo(() => ({
     loggedIn, setLoggedIn
   }), [loggedIn])

@@ -5,7 +5,7 @@ import { LoginContext } from '../../context/Context'
 
 /**
  * Represents a ProtectedRoute component.
- * @param {*} props - incoming props.
+ *
  * @returns {*} Returns a ProtectedRoute component.
  */
 function ProtectedRoute() {

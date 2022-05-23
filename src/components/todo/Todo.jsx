@@ -27,7 +27,6 @@ function Todo() {
     console.log('-----Todo UseEffect Component-----')
     const getTodoData = async () => {
       try {
-        /* const response = await fetch(url + userUid) */
         const response = await fetch(url + userUid, {
           method: 'GET',
           headers: {
@@ -39,20 +38,19 @@ function Todo() {
         if (responseToJson.length > 0) {
           setTasks(responseToJson)
         } else if (responseToJson.status_code === 404) {
-          console.log('404')
+          console.log('Could not fetch the data')
         }
       } catch (err) {
         console.log(err)
       }
     }
-    getTodoData()
+    return getTodoData()
   }, [boolValue, token, userUid])
 
   const addTask = async (title) => {
     console.log(title)
-    /* const newTasks = [...tasks, { title, completed: false }] */
     const payload = {
-      userId: userUid,
+      UserId: userUid,
       title,
       completed: false
     }
@@ -83,13 +81,13 @@ function Todo() {
     setValue('')
   }
 
-  const completeTask = async (task) => {
-    console.log('här')
+  const completeTask = async (task) => { // add.userId in payload
     let taskStatus = true;
     if (task.completed) {
       taskStatus = false
     }
     const payload = {
+      UserId: userUid,
       completed: taskStatus
     }
     const responseFromPatch = await fetch(url + task.id, {
@@ -108,24 +106,19 @@ function Todo() {
         setBoolValue(true)
       }
     }
-    /* const newTasks = [...tasks]
-    newTasks.map((title) => {
-      if (title === task) {
-        title.completed ? title.completed = false : title.completed = true
-        setTasks(newTasks)
-        return true
-      }
-      return false
-    }) */
   }
 
-  const removeTask = async (task) => {
+  const removeTask = async (task) => { // add userid in payload
+    const payload = {
+      UserId: userUid
+    }
     const responseFromDelete = await fetch(url + task.id, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${token}`
-      }
+      },
+      body: JSON.stringify(payload)
     })
     console.log(responseFromDelete)
     if (responseFromDelete.status === 204) {
@@ -135,16 +128,6 @@ function Todo() {
         setBoolValue(true)
       }
     }
-    /* const newTasks = [...tasks]
-    newTasks.map((title) => {
-      if (title === task) {
-        newTasks.splice(newTasks.indexOf(title), 1);
-        setTasks(newTasks)
-        console.log(tasks)
-        return true
-      }
-      return false
-    }) */
   }
   return (
     <div className="todo-container">

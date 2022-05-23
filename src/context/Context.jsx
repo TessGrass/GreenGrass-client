@@ -28,20 +28,19 @@ export function AuthContextProvider({ children }) {
   const [user, setUser] = useState({})
 
   useEffect(() => {
+    console.log('----useEffect AuthState----')
     onAuthStateChanged(
       auth,
       (currentUser) => {
         if (currentUser) {
           setUser(currentUser)
-          console.log('auth')
         } else {
           setUser(null)
-          console.log('auth null')
         }
       },
     )
     // eslint-disable-next-line no-useless-return
-    return
+    return false
   }, [])
 
   const handleSignIn = async (loginEmail, loginPassword) => {

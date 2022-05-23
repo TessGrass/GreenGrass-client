@@ -79,14 +79,14 @@ function Chart() {
   }
 
   const calculateSum = () => {
-    const irr = parseInt(irrigation, 10)
-    const see = parseInt(seed, 10)
-    const fer = parseInt(fertilizer, 10)
+    let irr = parseInt(irrigation, 10)
+    let see = parseInt(seed, 10)
+    let fer = parseInt(fertilizer, 10)
+    if (Number.isNaN(irr)) { irr = 0 }
+    if (Number.isNaN(see)) { see = 0 }
+    if (Number.isNaN(fer)) { fer = 0 }
     const sum = irr + see + fer
-    if (!Number.isNaN(sum)) {
-      return sum
-    }
-    return '0'
+    return sum
   }
 
   return (
