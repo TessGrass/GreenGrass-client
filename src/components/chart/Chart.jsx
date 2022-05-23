@@ -121,7 +121,7 @@ function Chart() {
         <div className="chart-container">
           <form className="form-wrapper" onSubmit={handleOnClick}>
             <input
-              type="text"
+              type="string"
               placeholder="Gräsfrö"
               className="chart-input-seed"
               required

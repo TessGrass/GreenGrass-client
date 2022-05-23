@@ -48,7 +48,6 @@ function Todo() {
   }, [boolValue, token, userUid])
 
   const addTask = async (title) => {
-    console.log(title)
     const payload = {
       UserId: userUid,
       title,
@@ -62,8 +61,8 @@ function Todo() {
       },
       body: JSON.stringify(payload)
     })
-    if (responseFromPost.status === 204) {
-      if (boolValue === true) {
+    if (responseFromPost.status === 201) {
+      if (boolValue) {
         setBoolValue(false)
       } else {
         setBoolValue(true)
@@ -72,7 +71,6 @@ function Todo() {
   }
 
   const handleSubmit = (e) => {
-    console.log(value)
     e.preventDefault()
     if (!value) {
       return
@@ -98,7 +96,6 @@ function Todo() {
       },
       body: JSON.stringify(payload)
     })
-    console.log(responseFromPatch)
     if (responseFromPatch.status === 204) {
       if (boolValue === true) {
         setBoolValue(false)
@@ -120,7 +117,6 @@ function Todo() {
       },
       body: JSON.stringify(payload)
     })
-    console.log(responseFromDelete)
     if (responseFromDelete.status === 204) {
       if (boolValue === true) {
         setBoolValue(false)

@@ -18,6 +18,7 @@ function CookieConsentComp() {
         buttonStyle={{
           fontFamily: 'Quicksand', fontWeight: '500', padding: '10px', borderRadius: '10px', marginLeft: '6vh'
         }}
+        expires={365}
         buttonText="Jag förstår"
       >
         Den här webbplatsen använder sig av Cookies. Läs mer om Cookies i vår <Link to="/integrity-policy" className="integrity-policy-link">integritetspolicy</Link>
