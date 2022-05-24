@@ -97,7 +97,7 @@ function Todo() {
       body: JSON.stringify(payload)
     })
     if (responseFromPatch.status === 204) {
-      if (boolValue === true) {
+      if (boolValue) {
         setBoolValue(false)
       } else {
         setBoolValue(true)

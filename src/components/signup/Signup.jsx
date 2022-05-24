@@ -46,7 +46,9 @@ function Signup() {
           <form className="signup-form" onSubmit={register}>
             <input type="email" className="placeholder" placeholder="användarmail" onChange={(event) => { setRegisterEmail(event.target.value) }} />
             <input type="password" className="placeholder" pattern=".{6,}" placeholder="lösenord" required title="Minimum sex tecken" onChange={(event) => { setRegisterPassword(event.target.value) }} />
-            <input type="checkbox" id="consent" name="consent" required />Jag samtycker till att skicka mina uppgifter.
+            <div className="signup-consent-input-wrapper">
+              <input type="checkbox" id="signup-consent" name="consent" required />Jag samtycker till att skicka mina uppgifter.
+            </div>
             { registeredUser ? <div className="success-register-user">Ditt konto har skapats och du kan nu logga in!</div> : false }
             <button type="submit">Registrera dig</button>
             <p className="signup-message">
