@@ -1,6 +1,5 @@
 import { Doughnut } from 'react-chartjs-2'
 import React, { useEffect, useState, useContext } from 'react'
-// eslint-disable-next-line no-unused-vars
 import { Chart as ChartJS } from 'chart.js/auto'
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { UserUidContext, tokenContext } from '../../context/Context'
@@ -34,7 +33,7 @@ function Chart() {
           },
         })
         if (!data.ok) {
-          throw Error('Could not fetch the data')
+          throw Error('No data could be fetched')
         }
         const json = await data.json()
         if (json.length > 0) {
@@ -71,7 +70,7 @@ function Chart() {
       body: JSON.stringify(payload)
     })
 
-    if (bool) {
+    if (bool) { // Makes the useEffect run everytime the fetch runs. That means that the data that is posted is also retrieved almost instantly.
       setBool(false)
     } else {
       setBool(true)

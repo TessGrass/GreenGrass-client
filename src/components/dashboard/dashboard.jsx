@@ -12,7 +12,6 @@ import Todo from '../todo/Todo'
 function Dashboard() {
   const session = JSON.parse(sessionStorage.getItem(Object.keys(sessionStorage)
     .filter((session) => session.includes('firebase'))[0]))
-  console.log(session)
   return (
     <>
       <h1 className="db-hello-user-headline">Hejsan {session.email}!</h1>

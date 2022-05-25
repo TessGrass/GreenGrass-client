@@ -16,6 +16,7 @@ function Signup() {
   const [registerPassword, setRegisterPassword] = useState('')
   const [registeredUser, setRegisteredUser] = useState(false)
 
+  // Register a new user and
   const register = async (event) => {
     try {
       event.preventDefault()
@@ -39,7 +40,7 @@ function Signup() {
         <div className="form-signup">
           <div className="signup">
             <div className="signup-header">
-              <h3>REGISTRERA DIG HÄR</h3>
+              <h3 className="register-h3">Registrera dig här</h3>
               <p>Skriv in din mail och ett lösenord, minst 6 tecken.</p>
             </div>
           </div>

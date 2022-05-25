@@ -72,6 +72,7 @@ textarea::placeholder {
   font-size: 13px;
 }
 
+
 .contact-us-message-sent {
   font-family: Quicksand;
   width: 16vw;
@@ -87,4 +88,11 @@ textarea::placeholder {
 }
 
 .contact-us-message-sent:hover { background:#1e821c; }
+
+.captcha-checkbox-text {
+ font-size: 14px;
+ color:rgb(255, 0, 0);
+ margin-top: 0.5em;
+ margin-bottom: 0.1em;
+}
 

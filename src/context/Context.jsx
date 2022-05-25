@@ -39,7 +39,6 @@ export function AuthContextProvider({ children }) {
         }
       },
     )
-    // eslint-disable-next-line no-useless-return
     return false
   }, [])
 

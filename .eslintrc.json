@@ -10,6 +10,7 @@
     "no-console": "off",
     "no-shadow": "off",
     "max-len": "off",
+    "no-unused-vars": "off",
     "react/jsx-one-expression-per-line": "off",
     "requireReturnForObjectLiteral": 0,
     "import/no-named-as-default": 0,

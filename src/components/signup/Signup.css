@@ -18,6 +18,10 @@
   margin-bottom: 26px;
 }
 
+.register-h3 {
+  text-transform: uppercase;
+}
+
 .form-signup {
   position: relative;
   z-index: 1;

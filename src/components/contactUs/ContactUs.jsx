@@ -4,52 +4,54 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import './ContactUs.css'
 
 /**
- * Represents a Contact Us component.
+ * Represents a ContactUs component.
  *
- * @returns {*} the ContactUs Component.
+ * @returns {*} returns the ContactUs Component.
  */
 function ContactUs() {
   const [messageSent, setMessageSent] = useState(false)
   const [captchaStatus, setCaptchaStatus] = useState(false)
+  const [captchaCheckbox, setCaptchaCheckbox] = useState(false)
   const form = useRef()
   const captcha = useRef(null)
 
+  // Displays a message if the message was sent.
   const message = () => {
     setMessageSent(true)
     const timer = setTimeout(() => {
       clearTimeout(timer)
       setMessageSent(false)
-    }, 1000)
+    }, 2000)
   }
 
+  // Listens for changes to recaptcha value.
   const onChange = async () => {
     try {
       if (await captcha.current.getValue()) {
         setCaptchaStatus(true)
+        setCaptchaCheckbox(false)
       }
     } catch (err) {
       console.log(err.message)
     }
   }
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     try {
       e.preventDefault()
       if (captchaStatus) {
-        emailjs.sendForm('service_74qoba4', 'template_8m4oiru', form.current, 'bZGq6YtA4Ir7WQ6da')
-          .then((result) => {
-            console.log(result.text)
-            message()
-          }, (error) => {
-            console.log(error.text)
-          });
+        const res = await emailjs.sendForm('service_74qoba4', 'template_8m4oiru', form.current, 'bZGq6YtA4Ir7WQ6da')
+        if (res.status === 200) {
+          message()
+        }
         e.target.reset()
       } else {
-        console.log('false')
+        setCaptchaCheckbox(true)
       }
     } catch (err) {
       console.log(err.message)
     }
   }
+  // 6LfV7AsgAAAAAPch9JbEElqMtwij9IfQiAG1_Egd
 
   return (
     <div className="contact-us-container">
@@ -62,6 +64,7 @@ function ContactUs() {
           sitekey="6LfV7AsgAAAAAPch9JbEElqMtwij9IfQiAG1_Egd"
           onChange={onChange}
         />
+        {captchaCheckbox ? <p className="captcha-checkbox-text">Vänligen kryssa i rutan ovanför</p> : null }
         <div className="consent-input-wrapper">
           <input type="checkbox" id="consent" name="consent" required />Jag samtycker till att skicka mina uppgifter.
         </div>
