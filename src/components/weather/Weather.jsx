@@ -49,15 +49,13 @@ function Weather() {
   }
 
   /**
-   * Calculates the weekday.
+   * Calculates the week day.
    *
-   * @param {string} dt - fetched date from openweathermap api.
-   * @returns {string} - the weekday.
+   * @param {string} fetchedDate - fetched date from openweathermap api.
+   * @returns {string} - the week day.
    */
-  function createDate(dt) {
-    console.log('-----createDate-----')
-    const day = new Date(dt * 1000)
-    // return day.toLocaleString("en-us", options);
+  function createDate(fetchedDate) {
+    const day = new Date(fetchedDate * 1000)
     return day.toLocaleString('sv-SE', { weekday: 'long' })
   }
 
@@ -69,11 +67,9 @@ function Weather() {
         </div>
         {error ? <div className="error-city-input">Inga sökträffar</div> : false }
         {data.name ? <p className="city">{data.name}</p> : <p className="city">Stockholm</p> }
-        {/* <p className="city">{data.name}</p> */}
-        {data.main ? <span className="temperature"> {Math.floor(data.main.temp)}°C {/*  <img className="forecast-today-img" src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="icon" /> */} </span> : <span className="temperature">32°C</span>}
-        {/*   {data.main ? <img className="forecast-today-img" src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="icon" /> : null} */}
+        {data.main ? <span className="temperature"> {Math.floor(data.main.temp)}°C </span> : <span className="temperature">32°C</span>}
         <div className="bottom">
-          {data.main ? <img className="forecast-today-img" src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="icon" /> : null}
+          {data.main ? <img className="forecast-today-img" src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`} alt="icon" /> : null}
           <div className="humidity">
             {data.wind ? <p className="topDesc">{data.wind.speed} m/s</p> : <p className="topDesc">5.23 m/s</p>}
             <p className="desc">Vindstyrka</p>
@@ -94,10 +90,9 @@ function Weather() {
           <div className="forecast-wrapper">
             {forecastData.map((c) => (
               <div className="forecast-box" key={c.dt}>
-                {/* <p>{console.log(c.weather[0].icon)}</p> */}
                 <p className="forecast-weekday">{createDate(c.dt)}</p>
                 <div className="forecast-img-wrapper">
-                  <img className="forecastImg" src={`http://openweathermap.org/img/wn/${c.weather[0].icon}@2x.png`} alt="icon" />
+                  <img className="forecastImg" src={`https://openweathermap.org/img/wn/${c.weather[0].icon}@2x.png`} alt="icon" />
                 </div>
                 <p className="forecast-temp">Dag {Math.floor(c.temp.day)}°C </p>
                 <p className="forecast-temp">Natt {Math.floor(c.temp.night)}°C </p>

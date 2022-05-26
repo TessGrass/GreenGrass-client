@@ -5,16 +5,16 @@
     "react/prop-types": 0,
     "valid-jsdoc": "warn",
     "require-jsdoc": "warn",
-    "comma-dangle": "off",
+   /*  "comma-dangle": "off", */
     "semi": [0, "always"],
     "no-console": "off",
-    "no-shadow": "off",
     "max-len": "off",
-    "no-unused-vars": "off",
+    "no-shadow": "off",
     "react/jsx-one-expression-per-line": "off",
     "requireReturnForObjectLiteral": 0,
-    "import/no-named-as-default": 0,
-    "import/no-named-as-default-member": 0
+    /* "import/no-named-as-default": 0, */
+    /* "import/no-named-as-default-member": 0, */
+    "react/jsx-no-constructed-context-values": "off"
   },
   "globals": {
     "document": "readonly",

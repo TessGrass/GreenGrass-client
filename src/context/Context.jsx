@@ -1,8 +1,8 @@
 import {
-  React, createContext, useContext, useState, useEffect
+  React, createContext, useContext, useState, useEffect,
 } from 'react'
 import {
-  setPersistence, signInWithEmailAndPassword, onAuthStateChanged, signOut, browserSessionPersistence, getIdToken, getAuth
+  setPersistence, signInWithEmailAndPassword, onAuthStateChanged, signOut, browserSessionPersistence, getIdToken, /* getAuth */
 } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../firebase-config'
@@ -12,7 +12,7 @@ export const UserUidContext = createContext({})
 export const tokenContext = createContext({})
 export const AuthContext = createContext({
   logout: () => {},
-  login: () => {}
+  login: () => {},
 })
 
 /**
@@ -52,7 +52,8 @@ export function AuthContextProvider({ children }) {
         throw Error('Could not fetch the data')
       }
       if (userData.user.email) {
-        const auth = getAuth()
+        /* const auth2 = getAuth()
+        console.log(auth2) */
         const fetchedToken = await getIdToken(auth.currentUser)
         setToken(fetchedToken)
         setUserUid(userData.user.uid)
@@ -71,10 +72,9 @@ export function AuthContextProvider({ children }) {
     setLoggedIn(false)
   }
 
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
   const contextValue = {
     handleSignOut,
-    handleSignIn
+    handleSignIn,
   }
 
   return (

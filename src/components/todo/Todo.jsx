@@ -1,5 +1,5 @@
 import {
-  React, useState, useEffect, useContext
+  React, useState, useEffect, useContext,
 } from 'react'
 import { UserUidContext, tokenContext } from '../../context/Context'
 import './Todo.css'
@@ -19,7 +19,7 @@ function Todo() {
   const [tasks, setTasks] = useState([
     {
       title: '',
-      completed: false
+      completed: false,
     },
   ])
 
@@ -31,7 +31,7 @@ function Todo() {
           method: 'GET',
           headers: {
             'Content-type': 'application/json',
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
           },
         })
         const responseToJson = await response.json()
@@ -51,15 +51,15 @@ function Todo() {
     const payload = {
       UserId: userUid,
       title,
-      completed: false
+      completed: false,
     }
     const responseFromPost = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     })
     if (responseFromPost.status === 201) {
       if (boolValue) {
@@ -86,15 +86,15 @@ function Todo() {
     }
     const payload = {
       UserId: userUid,
-      completed: taskStatus
+      completed: taskStatus,
     }
     const responseFromPatch = await fetch(url + task.id, {
       method: 'PATCH',
       headers: {
         'Content-type': 'application/json',
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     })
     if (responseFromPatch.status === 204) {
       if (boolValue) {
@@ -107,15 +107,15 @@ function Todo() {
 
   const removeTask = async (task) => { // add userid in payload
     const payload = {
-      UserId: userUid
+      UserId: userUid,
     }
     const responseFromDelete = await fetch(url + task.id, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     })
     if (responseFromDelete.status === 204) {
       if (boolValue === true) {

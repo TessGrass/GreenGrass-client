@@ -1,5 +1,6 @@
 import { Doughnut } from 'react-chartjs-2'
 import React, { useEffect, useState, useContext } from 'react'
+// eslint-disable-next-line no-unused-vars
 import { Chart as ChartJS } from 'chart.js/auto'
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { UserUidContext, tokenContext } from '../../context/Context'
@@ -29,7 +30,7 @@ function Chart() {
           method: 'GET',
           headers: {
             'Content-type': 'application/json',
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`,
           },
         })
         if (!data.ok) {
@@ -59,15 +60,15 @@ function Chart() {
       period,
       seed,
       irrigation,
-      fertilizer
+      fertilizer,
     }
     await fetch(url, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     })
 
     if (bool) { // Makes the useEffect run everytime the fetch runs. That means that the data that is posted is also retrieved almost instantly.
@@ -104,7 +105,7 @@ function Chart() {
           width={600}
           plugins={[ChartDataLabels]}
           options={{
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
           }}
         />
         { isLoading ? (

@@ -51,14 +51,13 @@ function ContactUs() {
       console.log(err.message)
     }
   }
-  // 6LfV7AsgAAAAAPch9JbEElqMtwij9IfQiAG1_Egd
 
   return (
     <div className="contact-us-container">
       <form className="contact-us-form" ref={form} onSubmit={sendEmail}>
-        <input type="text" className="contact-us-input" placeholder="Namn" name="user_name" />
-        <input type="email" className="contact-us-input" placeholder="Emailadress" name="user_email" />
-        <textarea className="contact-us-input" placeholder="Vad kan vi hjälpa dig med?" name="message" />
+        <input type="text" className="contact-us-input" placeholder="Namn" name="user_name" required />
+        <input type="email" className="contact-us-input" placeholder="Emailadress" name="user_email" required />
+        <textarea className="contact-us-input" placeholder="Vad kan vi hjälpa dig med?" name="message" required />
         <ReCAPTCHA
           ref={captcha}
           sitekey="6LfV7AsgAAAAAPch9JbEElqMtwij9IfQiAG1_Egd"

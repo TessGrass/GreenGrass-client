@@ -9,7 +9,7 @@ It is intended to function as a planner for the lawn where you as a registered u
 
 ## Npm packages
 
-As of May 25:th year 2022, the following packages have been used in this project
+As of May 25th, 2022, the following packages have been used in this project
 - [react](https://www.npmjs.com/package/react) - Is a JavaScript library for creating user interfaces.
 - [react-router](https://www.npmjs.com/package/react-router) - Provides all the core functionality for react-router-dom.
 - [React Router DOM](https://www.npmjs.com/package/react-router-dom) - Contains bindings for using React Router in web applications.
