@@ -16,7 +16,7 @@ function CookieConsentComp() {
         location="bottom"
         style={{ background: '#FA9F29' }}
         buttonStyle={{
-          fontFamily: 'Quicksand', fontWeight: '500', padding: '10px', borderRadius: '10px', marginLeft: '6vh'
+          fontFamily: 'Quicksand', fontWeight: '500', padding: '10px', borderRadius: '10px', marginLeft: '6vh',
         }}
         expires={365}
         buttonText="Jag förstår"

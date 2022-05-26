@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import {
-  LoginContext, UserUidContext, tokenContext, AuthContextProvider
+  LoginContext, UserUidContext, tokenContext, AuthContextProvider,
 } from '../../context/Context'
 import CookeConsentComp from '../cookieConsentComp/CookieConsentComp'
 import Dashboard from '../dashboard/dashboard'
@@ -36,15 +36,15 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(sessionLoggedIn || false)
 
   const loggedInValue = useMemo(() => ({
-    loggedIn, setLoggedIn
+    loggedIn, setLoggedIn,
   }), [loggedIn])
 
   const tokenValue = useMemo(() => ({
-    token, setToken
+    token, setToken,
   }), [token])
 
   const userUidValue = useMemo(() => ({
-    userUid, setUserUid
+    userUid, setUserUid,
   }), [userUid])
 
   return (
