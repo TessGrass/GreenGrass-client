@@ -5,7 +5,7 @@ import './Fertilizer.css'
 /**
  * Represents a Fertilizer component.
  *
- * @returns {*} - Returns a Fertilizer component.
+ * @returns {JSX} - Returns a Fertilizer component.
  */
 function Fertilizer() {
   return (

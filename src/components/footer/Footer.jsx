@@ -5,7 +5,7 @@ import './Footer.css'
 /**
  * Represents a footer component.
  *
- * @returns {*} Returns a footer component.
+ * @returns {JSX} Returns a footer component.
  */
 function Footer() {
   return (

@@ -5,7 +5,7 @@ import './Irrigation.css'
 /**
  * Represents a Irrigation component.
  *
- * @returns {*} returns the Irrigation component.
+ * @returns {JSX} returns the Irrigation component.
  */
 function Irrigation() {
   return (

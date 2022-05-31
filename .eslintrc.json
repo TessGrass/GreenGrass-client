@@ -5,7 +5,6 @@
     "react/prop-types": 0,
     "valid-jsdoc": "warn",
     "require-jsdoc": "warn",
-   /*  "comma-dangle": "off", */
     "semi": [0, "always"],
     "no-console": "off",
     "max-len": "off",

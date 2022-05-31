@@ -12,6 +12,7 @@
 }
 
 .headline {
+  text-transform: uppercase;
   font-family: Poppins;
   padding-left: 145px;
   padding-right: 145px;
@@ -72,8 +73,9 @@ img {
   margin-top: 1.2em;
   margin-right: 6em;
   margin-left: 0;
+  margin-bottom: 6em;
   background-color: #f4f4f4; 
-   min-height: 150px;
+   min-height: 10em;
    max-width: 450px;
 }
 
@@ -87,19 +89,19 @@ img {
 }
 .content2 {
   margin: 20px;
-  max-height: 200px;
+  min-height: 20em;
   max-width: 250px;
 }
 
 .content3 {
   margin: 20px;
-  max-height: 200px;
-  max-width: 250px; 
+  min-height: 20em;
+  max-width: 250px;
 }
 .content4 {
   display: inline-block;
   margin: 20px;
-  max-height: 200px;
+  min-height: 20em;
   max-width: 250px;
 }
 
@@ -125,6 +127,12 @@ font-size: 16px;
   margin: 0;
   padding-top: 3px;
   font-size: 14px;
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
 }
 
 

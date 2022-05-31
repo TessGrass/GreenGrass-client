@@ -7,7 +7,7 @@ import ContactUs from '../contactUs/ContactUs'
 /**
  * Represents an IntegrityPolicy component.
  *
- * @returns {*} - Returns the integrity policy.
+ * @returns {JSX} - Returns the integrity policy component.
  */
 function IntegrityPolicy() {
   return (

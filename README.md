@@ -3,6 +3,12 @@
 GreenGrass is a web application for the everyday lawn nerd.
 It is intended to function as a planner for the lawn where you as a registered user can set a budget, get weather reports and write down todos to be performed at a later time. The web application also gives tips on how to take care of your lawn and this information is available to all users.
 
+## Live
+- https://greengrass-client.herokuapp.com
+
+## Status 
+- Active
+
 ## Built With
 - React.js
 - Firebase SDK Authenticate
@@ -62,7 +68,7 @@ npm test
 ```
 
 ## License
-The images used in this project is either licensed under the [Unsplash License](https://unsplash.com/license) or else a permission to use the image has been obtained directly from the owner of the image.
+The images used in this project is either licensed under the [Unsplash License](https://unsplash.com/license) or a permission to use the image has been obtained directly from the owner of the image.
 
 ## Contact
 Therese Grass - theresegrass@hotmail.se

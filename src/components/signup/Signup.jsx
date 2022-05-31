@@ -7,9 +7,9 @@ import { auth } from '../../firebase-config'
 import './Signup.css'
 
 /**
- * Represents a Signup function.
+ * Represents a Signup component.
  *
- * @returns {*} the component.
+ * @returns {JSX} the SignUp component.
  */
 function Signup() {
   const [registerEmail, setRegisterEmail] = useState('')

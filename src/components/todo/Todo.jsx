@@ -7,7 +7,7 @@ import './Todo.css'
 /**
  * Represents a Todo component.
  *
- * @returns {*} returns the Todo component.
+ * @returns {JSX} returns the Todo component.
  */
 function Todo() {
   let key = 1

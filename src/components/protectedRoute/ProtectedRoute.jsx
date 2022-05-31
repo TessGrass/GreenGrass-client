@@ -6,7 +6,7 @@ import { LoginContext } from '../../context/Context'
 /**
  * Represents a ProtectedRoute component.
  *
- * @returns {*} Returns a ProtectedRoute component.
+ * @returns {JSX} Returns a ProtectedRoute component.
  */
 function ProtectedRoute() {
   console.log('---protectedRoute----')

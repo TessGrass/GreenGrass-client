@@ -4,7 +4,7 @@ import './Weather.css'
 /**
  * Represents a weather component.
  *
- * @returns {*} - returns a weather component.
+ * @returns {JSX} - returns a weather component.
  */
 function Weather() {
   const [data, setData] = useState({})

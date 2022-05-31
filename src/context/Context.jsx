@@ -18,7 +18,7 @@ export const AuthContext = createContext({
 /**
  * Represents a AuthContext component.
  *
- * @returns {*} authContext.
+ * @returns {JSX} authContext.
  */
 export function AuthContextProvider({ children }) {
   const navigate = useNavigate()

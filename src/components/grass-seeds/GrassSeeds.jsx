@@ -8,7 +8,7 @@ import './GrassSeeds.css'
 /**
  * Represents the GrassSeeds component.
  *
- * @returns {*} - Returns the GrassSeeds component.
+ * @returns {JSX} - Returns the GrassSeeds component.
  */
 function GrassSeeds() {
   return (

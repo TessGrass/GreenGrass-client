@@ -7,7 +7,7 @@ import Todo from '../todo/Todo'
 /**
  * Represents a Dashboard component.
  *
- * @returns {*} - Returns the component.
+ * @returns {JSX} - Returns the component.
  */
 function Dashboard() {
   const session = JSON.parse(sessionStorage.getItem(Object.keys(sessionStorage)

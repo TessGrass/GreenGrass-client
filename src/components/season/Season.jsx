@@ -5,7 +5,7 @@ import './Season.css'
 /**
  * Represents a Season component.
  *
- * @returns {*} Returns the component.
+ * @returns {JSX} Returns the component.
  */
 function Season() {
   return (

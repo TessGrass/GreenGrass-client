@@ -6,7 +6,7 @@ import './Login.css'
 /**
  * Represents a Login component.
  *
- * @returns {*} Returns the component.
+ * @returns {JSX} Returns the component.
  */
 function Login() {
   const { handleSignIn } = useContext(AuthContext)

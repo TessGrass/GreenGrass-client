@@ -4,7 +4,7 @@ import './Error404.css'
 /**
  * Represents a 404 error component.
  *
- * @returns {*} Returns the component.
+ * @returns {JSX} Returns the component.
  */
 function Error404() {
   return (

@@ -5,11 +5,11 @@ import './Home.css';
 /**
  * Represents a Home component.
  *
- * @returns {*} returns the component.
+ * @returns {JSX} returns the component.
  */
 function Home() {
   const article = 'I slutet av maj eller början av juni bör du vertikalskära, (1-2 cm djup) och stödså döda partier. Dressa gräsmattan med Rölunda, Hasselfors eller Weibulls gräsmattedress. Att vertikalskära gräsmattanmattan är inte nödvändigt varje år men däremot är det viktigt att dressa och stödså för att bland annat hålla ogräset borta. '
-  + ' Beroende på vilket gödsel du har valt så kan det vara lämpligt med en ny giva. Vid eventuell torka måste man vattna. Se till att det blir en riktig ”rotblöta” (25-30 mm). Hellre mycket men sällan.'
+  + ' Beroende på vilket gödsel du har valt så kan det vara lämpligt med en ny giva.'
 
   const period = 'MAJ - JUNI'
 
@@ -17,7 +17,7 @@ function Home() {
     <div className="home-wrapper">
       <div className="home" />
       <div>
-        <p className="headline">GREENGRASS</p>
+        <p className="headline">Greengrass</p>
         <p className="headline-bottom-text">Din gräsmatteplanerare</p>
       </div>
       <div className="startpage-bottom">
@@ -58,10 +58,4 @@ function Home() {
   );
 }
 
-export default Home;
-
-/* <Block className={"one"} />
-    <Block className={"two"} />
-    <Block className={"three"} />
-    <Block className={"four"} />
-    <Block className={"five"} /> */
+export default Home

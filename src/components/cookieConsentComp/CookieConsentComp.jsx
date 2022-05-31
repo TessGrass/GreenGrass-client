@@ -6,7 +6,7 @@ import './CookieConsentComp.css'
 /**
  * Represents a cookie consent component.
  *
- * @returns {*} a cookie consent component.
+ * @returns {JSX} a cookie consent component.
  */
 function CookieConsentComp() {
   return (

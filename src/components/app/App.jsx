@@ -23,7 +23,7 @@ import './App.css';
 /**
  * Represents an App component.
  *
- * @returns {*} - returns the component.
+ * @returns {JSX} - returns the component.
  */
 function App() {
   const session = JSON.parse(sessionStorage.getItem(Object.keys(sessionStorage)

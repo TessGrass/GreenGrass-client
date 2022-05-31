@@ -6,7 +6,7 @@ import './ContactUs.css'
 /**
  * Represents a ContactUs component.
  *
- * @returns {*} returns the ContactUs Component.
+ * @returns {JSX} returns the ContactUs Component.
  */
 function ContactUs() {
   const [messageSent, setMessageSent] = useState(false)
