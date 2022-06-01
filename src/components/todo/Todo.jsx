@@ -79,8 +79,9 @@ function Todo() {
     setValue('')
   }
 
-  const completeTask = async (task) => { // add.userId in payload
+  const completeTask = async (task) => {
     let taskStatus = true;
+    console.log(task.completed)
     if (task.completed) {
       taskStatus = false
     }
@@ -105,7 +106,7 @@ function Todo() {
     }
   }
 
-  const removeTask = async (task) => { // add userid in payload
+  const removeTask = async (task) => {
     const payload = {
       UserId: userUid,
     }
@@ -140,7 +141,7 @@ function Todo() {
         </div>
       </div>
       <form className="todo-form" onSubmit={handleSubmit}>
-        <input type="text" className="input-todo" value={value} placeholder="Lägg till en uppgift" onChange={(e) => setValue(e.target.value)} />
+        <input type="text" className="input-todo" value={value} placeholder="Lägg till en uppgift" maxLength="27" onChange={(e) => setValue(e.target.value)} />
         <button type="submit" className="add-todo-button">Lägg till</button>
       </form>
     </div>
