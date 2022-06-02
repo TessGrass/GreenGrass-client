@@ -9,7 +9,6 @@ import { LoginContext } from '../../context/Context'
  * @returns {JSX} Returns a ProtectedRoute component.
  */
 function ProtectedRoute() {
-  console.log('---protectedRoute----')
   const { loggedIn } = useContext(LoginContext)
 
   if (!loggedIn) {

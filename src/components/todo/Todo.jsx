@@ -24,7 +24,6 @@ function Todo() {
   ])
 
   useEffect(() => {
-    console.log('-----Todo UseEffect Component-----')
     const getTodoData = async () => {
       try {
         const response = await fetch(url + userUid, {
@@ -81,7 +80,6 @@ function Todo() {
 
   const completeTask = async (task) => {
     let taskStatus = true;
-    console.log(task.completed)
     if (task.completed) {
       taskStatus = false
     }

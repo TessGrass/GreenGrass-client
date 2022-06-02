@@ -49,14 +49,14 @@ function Season() {
             Sprid ut Super Gramino, Stroller Gräsgödsel eller Florovit Gräsgödning 3kg per 100 kvm i slutet av juli.
             Vattna gräsmattan vid behov (25-30 mm). Gräsmattan ska under växtsäsongen klippas 1-2 gånger i veckan.
             Tänk på att absolut inte klippa ner gräsets höjd mer än en tredjedel åt gången.
-            En lämplig höjd är 30-40 mm med rotorklippare och 20-25 mm. med cyliderklippare.
+            En lämplig höjd är 30-40 mm med rotorklippare och 20-25 mm. med cylinderklippare.
             Använd alltid uppsamlare, även vid användning av rotorklippare.
           </p>
         </div>
         <div className="season-bottom-container">
           <div className="season-bottom-box"><p className="season-bottom-box-text">Rädda humlor och bin!</p></div>
           <p className="season-bottom-text">
-            Humlor och bin är pyttesmå superhjältar! Men de blir färre, så vi måste hjälpas åt att rädda dem! Läs mer om vad du kan göra på <a href="https://www.pandaplanet.se/radda-humlor-och-bin" className="panda-link">Panda Planet</a>
+            Humlor och bin är pyttesmå superhjältar! Men de blir färre, så vi måste hjälpas åt att rädda dem! Läs mer om vad du kan göra på <a target="_blank" rel="noopener noreferrer" href="https://www.pandaplanet.se/radda-humlor-och-bin" className="panda-link">Panda Planet</a>
           </p>
         </div>
       </div>

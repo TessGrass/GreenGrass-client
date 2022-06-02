@@ -15,7 +15,6 @@ function Weather() {
   let forecastArray = []
 
   const searchLocation = async (event) => {
-    console.log('-----searchLocation-----')
     if (event.key === 'Enter') {
       try {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${location},${country}&exclude=hourly,daily&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`

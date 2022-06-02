@@ -23,7 +23,6 @@ function Chart() {
   const url = 'https://greengrass-backend.herokuapp.com/api/v1/chart/'
 
   useEffect(() => {
-    console.log('-----Chart Component-----')
     const fetchData = async () => {
       try {
         const data = await fetch(url + userUid, {
